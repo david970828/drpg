@@ -51,65 +51,10 @@ function buildSceneLayers() {
 }
 
 /* ============================================================
-   2. FONDO DINÁMICO — cambia al hacer scroll
+   2. FONDO DINÁMICO — desactivado (línea del tiempo compacta sin scroll)
    ============================================================ */
 function initTimelineBackground() {
-  const overlay   = document.getElementById('scene-overlay');
-  const indicator = document.getElementById('era-indicator');
-  const layers    = document.querySelectorAll('.scene-layer');
-  const items     = document.querySelectorAll('.timeline-item[data-bg]');
-  const section   = document.getElementById('linea-tiempo');
-
-  if (!overlay || !layers.length || !section) return;
-
-  let activeIndex    = -1;
-  let indicatorTimer = null;
-
-  const sectionObserver = new IntersectionObserver(
-    ([entry]) => {
-      document.body.classList.toggle('timeline-active', entry.isIntersecting);
-      if (!entry.isIntersecting) {
-        layers.forEach(l => l.classList.remove('active'));
-        overlay.style.background = 'rgba(10,20,14,.0)';
-        if (indicator) indicator.classList.remove('visible');
-        activeIndex = -1;
-      }
-    },
-    { threshold: 0.05 }
-  );
-  sectionObserver.observe(section);
-
-  const cardObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-
-        const item  = entry.target;
-        const idx   = parseInt(item.dataset.layerIndex, 10);
-        const era   = item.dataset.era;
-        const label = item.dataset.eraLabel || '';
-
-        if (idx === activeIndex) return;
-        activeIndex = idx;
-
-        layers.forEach((l, i) => l.classList.toggle('active', i === idx));
-
-        const cfg = ERA_CONFIG[era] || {};
-        overlay.style.background = cfg.overlay || 'rgba(10,20,14,.65)';
-        overlay.style.transition = 'background 1.2s cubic-bezier(.4,0,.2,1)';
-
-        if (indicator && label) {
-          indicator.textContent = label;
-          indicator.classList.add('visible');
-          clearTimeout(indicatorTimer);
-          indicatorTimer = setTimeout(() => indicator.classList.remove('visible'), 3000);
-        }
-      });
-    },
-    { rootMargin: '-30% 0px -30% 0px', threshold: 0 }
-  );
-
-  items.forEach(item => cardObserver.observe(item));
+  // No se usa con la línea del tiempo compacta
 }
 
 /* ============================================================
@@ -266,20 +211,10 @@ function initSmoothScroll() {
 }
 
 /* ============================================================
-   8. LÍNEA DEL TIEMPO — crece con scroll
+   8. LÍNEA DEL TIEMPO — desactivado (compacta sin scroll)
    ============================================================ */
 function initTimelineGrowLine() {
-  window.addEventListener('scroll', updateTimelineLine, { passive: true });
-  updateTimelineLine();
-}
-
-function updateTimelineLine() {
-  const line    = document.getElementById('timelineLine');
-  const wrapper = document.querySelector('.timeline-wrapper');
-  if (!line || !wrapper) return;
-  const wTop = wrapper.getBoundingClientRect().top + window.scrollY;
-  const prog = Math.min(Math.max((window.scrollY + window.innerHeight - wTop) / wrapper.offsetHeight, 0), 1);
-  line.style.height = `${prog * wrapper.offsetHeight}px`;
+  // No se usa con la línea del tiempo compacta
 }
 
 /* ============================================================
