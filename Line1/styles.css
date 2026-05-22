@@ -952,3 +952,219 @@ a   { color: inherit; text-decoration: none; }
   .section-light, .section-dark, #linea-tiempo { padding: 3.5rem 1rem; }
   .cards-grid { grid-template-columns: 1fr; }
 }
+
+
+/* ============================================================
+   ESTILOS PARA IMPRESIÓN / PDF
+   Cada sección = una página separada
+   ============================================================ */
+@media print {
+  /* Reset para impresión */
+  body {
+    background: white !important;
+    color: #1c2e20 !important;
+    font-size: 11pt;
+    line-height: 1.5;
+    overflow: visible !important;
+  }
+
+  /* Ocultar elementos interactivos */
+  #navbar, #btn-top, #scene-bg, #scene-overlay,
+  #era-indicator, #particles, .nav-toggle {
+    display: none !important;
+  }
+
+  /* Cada sección es una página */
+  section, footer {
+    page-break-before: always;
+    page-break-inside: avoid;
+    padding: 2rem 1.5rem !important;
+    min-height: auto !important;
+    background: white !important;
+  }
+
+  /* La portada no necesita page-break-before */
+  #portada {
+    page-break-before: avoid;
+    background: #0f2a1a !important;
+    color: white !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #portada .hero-content { color: white !important; }
+  #portada .hero-titulo { color: white !important; text-shadow: none !important; }
+  #portada .hero-titulo em { color: #16a34a !important; }
+  #portada .hero-curso { color: #4ade80 !important; }
+  #portada .hero-subtitulo { color: rgba(255,255,255,.7) !important; }
+  #portada .hero-btn { display: none !important; }
+  #portada .autora-card { border-color: rgba(22,163,74,.4) !important; color: white !important; }
+  #portada .autoevaluacion { color: #4ade80 !important; }
+  #portada .hero-meta { color: rgba(255,255,255,.6) !important; }
+
+  /* Secciones oscuras en impresión */
+  .section-dark, #mapa {
+    background: #0f2a1a !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .section-dark .section-title,
+  .section-dark .section-subtitle,
+  #mapa .section-title,
+  #mapa .section-subtitle {
+    color: white !important;
+  }
+
+  /* Tarjetas oscuras */
+  .dark-card {
+    background: #14532d !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .dark-card h3 { color: #4ade80 !important; }
+  .dark-card p { color: rgba(255,255,255,.85) !important; }
+
+  /* Secciones claras */
+  .section-light, #linea-tiempo {
+    background: white !important;
+    color: #1c2e20 !important;
+  }
+
+  /* Línea del tiempo */
+  #linea-tiempo {
+    background: white !important;
+  }
+
+  .tl-card-mini {
+    background: #f0fdf4 !important;
+    border-color: #16a34a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .tl-card-mini h4 { color: #0f2a1a !important; }
+  .tl-card-mini p { color: #3a5a42 !important; }
+  .tl-year { color: #16a34a !important; }
+  .tl-icon { filter: none !important; }
+
+  .tl-line-h {
+    background: #16a34a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .tl-dot-h {
+    background: #16a34a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Mapa SVG — forzar visibilidad de líneas y nodos */
+  #mapa-svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  #mapa-svg line,
+  #mapa-svg .mapa-linea {
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #mapa-svg ellipse,
+  #mapa-svg text,
+  #mapa-svg g {
+    opacity: 1 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .mapa-linea {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+    stroke-dasharray: 8,4 !important;
+  }
+
+  /* Forzar fondo del mapa */
+  #mapa {
+    background: #0f2a1a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .mapa-wrapper {
+    filter: none !important;
+  }
+
+  /* Tarjetas normales */
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+  }
+
+  /* Justificación */
+  .justificacion {
+    background: #f0fdf4 !important;
+    border-left-color: #16a34a !important;
+  }
+
+  /* Bibliografía */
+  .biblio-item {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+    border-left: 4px solid #16a34a !important;
+  }
+
+  /* Grid 2x2 se mantiene */
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Footer */
+  #footer {
+    background: #0f2a1a !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .footer-logo { color: #4ade80 !important; }
+
+  /* Quitar animaciones y efectos */
+  * {
+    animation: none !important;
+    animation-delay: 0s !important;
+    transition: none !important;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Forzar líneas del mapa visibles (quitar stroke-dashoffset de la animación) */
+  .mapa-linea {
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+
+  /* Quitar pseudo-elementos decorativos */
+  .section-light::before,
+  .section-dark::before,
+  #portada::before,
+  #portada::after,
+  #mapa::before,
+  #linea-tiempo::before,
+  .card::before,
+  .tl-card-mini::before {
+    display: none !important;
+  }
+}
