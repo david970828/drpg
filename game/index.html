@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bomba del Conocimiento</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== PANTALLA DE CARGA ========== -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-bomb">💣</div>
+    <h1>Bomba del Conocimiento</h1>
+    <div class="loading-bar"><div class="loading-fill"></div></div>
+    <p>Preparando el campeonato...</p>
+  </div>
+
+  <!-- ========== APP PRINCIPAL ========== -->
+  <div id="app" class="app hidden">
+
+    <!-- ENCABEZADO -->
+    <header class="app-header">
+      <div class="header-left">
+        <span class="bomb-icon">💣</span>
+        <div>
+          <h1 class="main-title">Bomba del Conocimiento</h1>
+          <p class="main-subtitle">Aprende, compite y evita la explosión</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="round-badge">Ronda <span id="currentRoundBadge">1</span></div>
+        <!-- Sonido tic-tac: botón toggle -->
+        <button class="btn-icon" id="btnSound" onclick="SoundManager.toggle()" title="Sonido Tic-Tac">🔊</button>
+        <button class="btn-icon" onclick="App.openConfig()" title="Configuración">⚙️</button>
+        <button class="btn-icon" onclick="App.exportResults()" title="Exportar">📥</button>
+      </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+      <!-- COLUMNA IZQUIERDA: TABLERO + HISTORIAL -->
+      <aside class="sidebar-left">
+        <div class="card scoreboard-card">
+          <h2 class="card-title">🏆 Clasificación</h2>
+          <div id="scoreboardList" class="scoreboard-list"></div>
+        </div>
+        <div class="card history-card">
+          <h2 class="card-title">📋 Historial</h2>
+          <div id="historyList" class="history-list"></div>
+        </div>
+      </aside>
+
+      <!-- COLUMNA CENTRAL: JUEGO -->
+      <section class="game-area">
+
+        <!-- PASO 1: RULETA BOMBA -->
+        <div id="step1" class="game-step active-step">
+          <div class="step-header">
+            <span class="step-number">1</span>
+            <h2>Seleccionar Equipo Bomba</h2>
+          </div>
+          <div class="wheel-container">
+            <canvas id="wheelBomba" class="wheel-canvas" width="320" height="320"></canvas>
+            <div class="wheel-pointer">▼</div>
+          </div>
+          <div id="resultBomba" class="wheel-result hidden"></div>
+          <button id="btnSpinBomba" class="btn-primary btn-large" onclick="WheelManager.spinBomba()">
+            💣 Girar Ruleta Bomba
+          </button>
+        </div>
+
+        <!-- PASO 2: RULETA CHALLENGE -->
+        <div id="step2" class="game-step hidden">
+          <div class="step-header">
+            <span class="step-number">2</span>
+            <h2>Seleccionar Equipo Challenge</h2>
+          </div>
+          <div class="wheel-container">
+            <canvas id="wheelChallenge" class="wheel-canvas" width="320" height="320"></canvas>
+            <div class="wheel-pointer">▼</div>
+          </div>
+          <div id="resultChallenge" class="wheel-result hidden"></div>
+          <button id="btnSpinChallenge" class="btn-primary btn-large" onclick="WheelManager.spinChallenge()">
+            🎯 Girar Ruleta Challenge
+          </button>
+        </div>
+
+        <!-- PASO 3: SELECCIÓN DE DESAFÍO -->
+        <div id="step3" class="game-step hidden">
+          <div class="step-header">
+            <span class="step-number">3</span>
+            <h2>Elegir Tipo de Desafío</h2>
+          </div>
+          <p class="step-hint">Haz clic en una carta para revelar el desafío</p>
+          <div id="challengeCards" class="challenge-cards"></div>
+        </div>
+
+        <!-- PASO 4: PREPARACIÓN -->
+        <div id="step4" class="game-step hidden">
+          <div class="step-header">
+            <span class="step-number">4</span>
+            <h2>Preparando la Ronda</h2>
+          </div>
+          <div class="round-summary">
+            <div class="summary-item">
+              <span class="summary-label">💣 Equipo Bomba</span>
+              <span id="summaryBomba" class="summary-value">—</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">🎯 Equipo Challenge</span>
+              <span id="summaryChallenge" class="summary-value">—</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">🎮 Desafío</span>
+              <span id="summaryChallengetype" class="summary-value">—</span>
+            </div>
+          </div>
+          <div class="prep-note">
+            <span>⚡</span>
+            <span>Al reventarse la bomba los equipos <strong>intercambian roles</strong> automáticamente para la segunda fase</span>
+          </div>
+          <button class="btn-primary btn-large btn-glow" onclick="ModeratorPanel.startRound()">
+            🚀 INICIAR RONDA — FASE 1
+          </button>
+        </div>
+
+        <!-- PASO 5: RONDA ACTIVA -->
+        <div id="step5" class="game-step hidden">
+
+          <!-- INDICADOR DE FASE -->
+          <div class="phase-indicator" id="phaseIndicator">
+            <div class="phase-badge phase-1" id="phaseBadge">FASE 1</div>
+            <div class="phase-teams" id="phaseTeams"></div>
+          </div>
+
+          <!-- ÁREA DEL JUEGO ACTIVO -->
+          <div id="activeGameArea" class="active-game-area"></div>
+
+          <!-- CONTROLES DEL MODERADOR EN RONDA -->
+          <div class="round-controls">
+            <!-- Botón bomba explotó: activa fase 2 -->
+            <button class="btn-bomb-explode" id="btnBombExplode" onclick="ModeratorPanel.bombExploded()">
+              💥 ¡BOMBA EXPLOTÓ!
+            </button>
+            <button class="btn-danger" onclick="ModeratorPanel.finishRound()">🏁 Finalizar Ronda</button>
+          </div>
+
+          <!-- INDICADOR FASE 2 (oculto hasta que explote) -->
+          <div id="phase2Indicator" class="phase2-waiting hidden">
+            <div class="phase2-icon">🔄</div>
+            <div class="phase2-text">
+              <strong>Roles invertidos — FASE 2</strong>
+              <span id="phase2Desc"></span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- COLUMNA DERECHA: PANEL MODERADOR -->
+      <aside class="sidebar-right">
+        <div class="card moderator-card">
+          <h2 class="card-title">🎛️ Moderador</h2>
+          <div class="mod-info">
+            <div class="mod-row"><span>Ronda:</span><strong id="modRound">1</strong></div>
+            <div class="mod-row"><span>💣 Bomba:</span><strong id="modBomba">—</strong></div>
+            <div class="mod-row"><span>🎯 Challenge:</span><strong id="modChallenge">—</strong></div>
+            <div class="mod-row"><span>🎮 Desafío:</span><strong id="modDesafio">—</strong></div>
+            <div class="mod-row"><span>📍 Fase:</span><strong id="modFase">—</strong></div>
+            <div class="mod-row"><span>📊 Juego:</span><strong id="modGameStats" style="font-size:.75rem;max-width:170px">—</strong></div>
+            <div class="mod-row"><span>Estado:</span><strong id="modStatus" class="status-badge status-waiting">En espera</strong></div>
+          </div>
+          <div class="mod-actions">
+            <button class="btn-mod btn-mod-new" onclick="App.newRound()">🔄 Nueva Ronda</button>
+            <button class="btn-mod btn-mod-reset" onclick="App.resetChampionship()">🗑️ Reiniciar Todo</button>
+          </div>
+        </div>
+
+        <!-- INFO DE FUENTE DE CONTENIDO -->
+        <div class="card content-card">
+          <h2 class="card-title">📚 Contenido</h2>
+          <p class="doc-hint">Preguntas y desafíos generados automáticamente desde:</p>
+          <div class="source-list">
+            <div class="source-item">📖 Guía 1 — Orígenes de la Adm.</div>
+            <div class="source-item">📖 Guía 2 — Teorías Científicas</div>
+            <div class="source-item">📖 Guía 3 — Teorías Clásicas</div>
+            <div class="source-item">📖 Guía 4 — Teorías Modernas</div>
+            <div class="source-item">📖 Guía 5 — Calidad</div>
+            <div class="source-item">📖 Guía 6 — Empresa y Gerentes</div>
+            <div class="source-item">📖 Guía 7 — Proceso Adm. I</div>
+            <div class="source-item">📖 Guía 8 — Proceso Adm. II</div>
+            <div class="source-item">📖 Guía 9 — Proceso Adm. III</div>
+          </div>
+          <div class="content-stats" id="contentStats"></div>
+        </div>
+      </aside>
+
+    </main>
+  </div>
+
+  <!-- ========== MODAL: REGISTRO GANADOR ========== -->
+  <div id="modalWinner" class="modal-overlay hidden">
+    <div class="modal-box">
+      <h2 class="modal-title">🏆 Registrar Resultado</h2>
+      <!-- Resumen de ambas fases -->
+      <div id="roundSummaryPanel" class="round-summary-panel"></div>
+      <div class="form-group">
+        <label>Equipo Ganador de la Ronda</label>
+        <select id="winnerTeam" class="form-select"></select>
+      </div>
+      <div class="form-group">
+        <label>Puntos Otorgados</label>
+        <div class="points-options" id="pointsOptions">
+          <button class="pts-btn" onclick="App.selectPoints(1)">1</button>
+          <button class="pts-btn" onclick="App.selectPoints(2)">2</button>
+          <button class="pts-btn" onclick="App.selectPoints(3)">3</button>
+          <button class="pts-btn" onclick="App.selectPoints(5)">5</button>
+        </div>
+        <input type="number" id="winnerPoints" class="form-input" value="1" min="1" max="10"/>
+      </div>
+      <div class="form-group">
+        <label>Observaciones (opcional)</label>
+        <textarea id="winnerNotes" class="form-textarea" rows="2" placeholder="Notas del moderador..."></textarea>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="App.closeModal('modalWinner')">Cancelar</button>
+        <button class="btn-primary" onclick="App.saveWinner()">💾 Guardar Resultado</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL: CONFIGURACIÓN ========== -->
+  <div id="modalConfig" class="modal-overlay hidden">
+    <div class="modal-box modal-wide">
+      <h2 class="modal-title">⚙️ Configuración</h2>
+      <div class="config-grid">
+        <div class="form-group">
+          <label>Nombre Equipo 1</label>
+          <input type="text" id="configTeam1" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label>Nombre Equipo 2</label>
+          <input type="text" id="configTeam2" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label>Nombre Equipo 3</label>
+          <input type="text" id="configTeam3" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label>Tema Visual</label>
+          <select id="configTheme" class="form-select">
+            <option value="dark">Oscuro (Corporativo)</option>
+            <option value="blue">Azul Océano</option>
+            <option value="purple">Púrpura Galaxy</option>
+            <option value="green">Verde Esmeralda</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Sonido Tic-Tac</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="configSounds" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="App.closeModal('modalConfig')">Cancelar</button>
+        <button class="btn-danger" onclick="App.resetConfig()">Restablecer</button>
+        <button class="btn-primary" onclick="App.saveConfig()">💾 Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL: CONFIRMACIÓN RESET ========== -->
+  <div id="modalConfirm" class="modal-overlay hidden">
+    <div class="modal-box modal-small">
+      <h2 class="modal-title">⚠️ Confirmar</h2>
+      <p id="confirmMessage" class="confirm-msg">¿Estás seguro?</p>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="App.closeModal('modalConfirm')">Cancelar</button>
+        <button class="btn-danger" id="confirmBtn">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NOTIFICACIONES TOAST ========== -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
