@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALUN Technologies - Plan de Negocio Completo 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        
+        :root {
+            --neon-cyan: #00F0FF;
+            --neon-purple: #C100FF;
+            --neon-pink: #FF006E;
+            --neon-green: #00FF88;
+            --neon-orange: #FF6B00;
+            --dark-bg: #0a0e27;
+            --card-bg: #1a1f3a;
+        }
+        
+        @keyframes neonGlow {
+            0%, 100% { text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-purple); }
+            50% { text-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-purple), 0 0 40px var(--neon-pink); }
+        }
+        
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounceInScale {
+            0% { opacity: 0; transform: scale(0.3) translateY(50px); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes slideLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes rotate360 {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.5); }
+            50% { box-shadow: 0 0 50px rgba(0, 240, 255, 1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInLeft2 {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scaleUp {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes borderPulse {
+            0%, 100% { border-color: rgba(0, 240, 255, 0.3); }
+            50% { border-color: rgba(0, 240, 255, 0.8); }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* NAVEGACIÓN */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--neon-cyan);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideInDown 0.6s ease;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+        
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: neonGlow 2s ease infinite;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-badge {
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-pink));
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            animation: pulseGlow 2s ease infinite;
+            border: 1px solid var(--neon-pink);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+        
+        /* SECCIONES */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 70px auto 0;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        section.alt {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.5), rgba(45, 8, 69, 0.3));
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: slideInDown 0.8s ease;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 2rem 0 1rem;
+            animation: bounceInScale 0.8s ease;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        h2:hover {
+            text-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-purple);
+            transform: scale(1.02);
+        }
+        
+        h3 {
+            color: var(--neon-green);
+            margin: 1.5rem 0 0.8rem;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+        
+        h3:hover {
+            text-shadow: 0 0 15px var(--neon-green);
+            transform: translateX(5px);
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2d0845 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-logo {
+            width: 150px;
+            height: 150px;
+            background: url('logo.jpeg') center/cover;
+            border-radius: 20px;
+            margin: 0 auto 2rem;
+            animation: bounceInScale 1s ease, rotate360 20s linear infinite;
+            border: 3px solid var(--neon-cyan);
+            box-shadow: 0 0 60px rgba(0, 240, 255, 0.6);
+        }
+        
+        .hero h1 {
+            animation: slideInDown 0.8s ease 0.1s both, neonGlow 2s ease infinite;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(45, 8, 69, 0.7));
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 240, 255, 0.3);
+            animation: bounceInScale 0.8s ease both;
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+            transform: translateY(-8px);
+        }
+        
+        .card p {
+            color: #aaa;
+            line-height: 1.8;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(26, 31, 58, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease both;
+        }
+        
+        th {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+        
+        td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+        
+        tr {
+            transition: all 0.3s ease;
+        }
+        
+        tr:hover {
+            background: rgba(0, 240, 255, 0.15);
+            box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.1);
+        }
+        
+        .highlight {
+            color: var(--neon-green);
+            font-weight: 700;
+        }
+        
+        .highlight-orange {
+            color: var(--neon-orange);
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-orange:hover {
+            text-shadow: 0 0 10px var(--neon-orange);
+            transform: scale(1.1);
+        }
+        
+        .highlight-pink {
+            color: var(--neon-pink);
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-pink:hover {
+            text-shadow: 0 0 10px var(--neon-pink);
+            transform: scale(1.1);
+        }
+
+        /* ACORDEÓN DE PISOS */
+        .accordion-container {
+            margin: 2rem 0;
+        }
+
+        .accordion-item {
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(150, 150, 150, 0.3);
+            transition: all 0.3s ease;
+            background: #1a1f3a;
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(150, 150, 150, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .accordion-header {
+            background: linear-gradient(135deg, #3a3f4d 0%, #2a2f3d 100%);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(135deg, #4a4f5d 0%, #3a3f4d 100%);
+        }
+
+        .accordion-header h3 {
+            margin: 0;
+            color: #ddd;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+        }
+
+        .accordion-toggle {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(150, 150, 150, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            color: #999;
+        }
+
+        .accordion-item.active .accordion-toggle {
+            transform: rotate(180deg);
+            background: rgba(150, 150, 150, 0.4);
+            color: #ddd;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: #1a1f3a;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+            transition: max-height 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .accordion-body {
+            padding: 2rem;
+            border-top: 1px solid rgba(150, 150, 150, 0.2);
+        }
+
+        .floor-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .stat-box {
+            background: rgba(120, 120, 120, 0.15);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #888;
+            color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            background: rgba(120, 120, 120, 0.25);
+            border-left-color: #aaa;
+        }
+
+        .stat-box strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            color: #ccc;
+            line-height: 2;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            padding-left: 0.5rem;
+        }
+        
+        li:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            transform: translateX(8px);
+        }
+        
+        strong {
+            color: var(--neon-cyan);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .comparison-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: rgba(0, 240, 255, 0.05);
+        }
+        
+        .check { color: var(--neon-green); font-weight: 900; }
+        .x { color: var(--neon-pink); font-weight: 900; }
+        
+        footer {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            border-top: 2px solid var(--neon-cyan);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 -20px 40px rgba(0, 240, 255, 0.2);
+            margin-top: 6rem;
+            animation: slideInUp 0.8s ease;
+        }
+        
+        footer h3 {
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            animation: neonGlow 2s ease infinite;
+            transition: all 0.3s ease;
+        }
+        
+        footer h3:hover {
+            transform: scale(1.05);
+        }
+        
+        footer p {
+            color: #888;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        footer p:hover {
+            color: var(--neon-cyan);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin: 1rem 0.5rem;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.8), 0 0 60px rgba(193, 0, 255, 0.5);
+            transform: translateY(-3px) scale(1.05);
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Efecto de scroll reveal */
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+
+        /* Efecto parallax en hero */
+        .hero {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Animación de contador para números */
+        @keyframes numberCount {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <div class="nav-logo">
+            🚀 KALUN <span class="nav-badge">STARTUP</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#idea">Idea</a></li>
+            <li><a href="#mercado">Mercado</a></li>
+            <li><a href="#tecnico">Técnico</a></li>
+            <li><a href="#financiero">Financiero</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div>
+            <div class="hero-logo"></div>
+            <h1>KALUN TECHNOLOGIES</h1>
+            <p class="hero-subtitle">Plataforma Inteligente de Integración y Comparación de Servicios de Movilidad Urbana en Tiempo Real</p>
+            <p style="color: #aaa; margin-bottom: 2rem;">Universidad: Universitaria de Colombia | Contaduría Pública | Semestre 1-2026</p>
+            <button class="btn">📊 Ver Plan Completo</button>
+            <button class="btn">🎯 Explorar Finanzas</button>
+        </div>
+    </section>
+
+    <!-- AUTORES -->
+    <section id="autores" class="alt">
+        <h2>👥 Equipo Desarrollador</h2>
+        <p class="section-subtitle">Estudiantes de Contaduría Pública - Creación y Desarrollo de Empresas</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Karen Dayana Pérez Bernal</h3>
+                <p>Estudiante</p>
+                <p style="font-size: 0.85rem; color: #888;">Universitaria de Colombia</p>
+            </div>
+            <div class="card">
+                <h3>Luna María Neuta Carpeta</h3>
+                <p>Estudiante</p>
+                <p style="font-size: 0.85rem; color: #888;">Universitaria de Colombia</p>
+            </div>
+            <div class="card">
+                <h3>Heidy Andrea Morales Muñoz</h3>
+                <p>Estudiante</p>
+                <p style="font-size: 0.85rem; color: #888;">Universitaria de Colombia</p>
+            </div>
+            <div class="card">
+                <h3>Karen Dayana Vanegas Gutiérrez</h3>
+                <p>Estudiante</p>
+                <p style="font-size: 0.85rem; color: #888;">Universitaria de Colombia</p>
+            </div>
+            <div class="card">
+                <h3>Nicolás Esteban Salamanca Rivas</h3>
+                <p>Estudiante</p>
+                <p style="font-size: 0.85rem; color: #888;">Universitaria de Colombia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. IDEA - PRODUCTO -->
+    <section id="idea">
+        <h2>1️⃣ Idea - Producto</h2>
+        
+        <h3>1.1 Localización Urbana</h3>
+        <p>KALUN Technologies se establece en <strong>Bogotá, Distrito Capital, Colombia</strong>. Factores estratégicos:</p>
+        <ul>
+            <li>✅ Capital del país con mayor concentración de usuarios de transporte urbano</li>
+            <li>✅ Mayor mercado potencial: <strong>8.2 millones de habitantes</strong></li>
+            <li>✅ Infraestructura tecnológica avanzada con disponibilidad de talento tech</li>
+            <li>✅ Presencia de inversionistas ángeles y fondos de capital de riesgo</li>
+            <li>✅ Regulación digital más desarrollada que el resto del país</li>
+            <li>✅ Excelente conectividad de internet: <strong>99% cobertura en zona urbana</strong></li>
+            <li>✅ Clustering tecnológico en Usaquén, Chapinero y Suba</li>
+            <li>✅ Costo de operación moderado vs otras capitales latinoamericanas</li>
+        </ul>
+
+        <h3>1.2 Problema o Necesidad</h3>
+        <p>El servicio de transporte urbano en Bogotá enfrenta desafíos críticos:</p>
+        <ul>
+            <li><span class="highlight-pink">18 millones de viajes diarios</span> sin solución integral que optimice ruta, seguridad y tarifa</li>
+            <li>Fragmentación de opciones: Uber (premium), transportadores informales (economía), buses (masivo)</li>
+            <li>Falta de transparencia: diferencia hasta <span class="highlight-pink">300% entre aplicaciones</span></li>
+            <li>Deficiente información en tiempo real sobre disponibilidad, tráfico y seguridad</li>
+            <li>Usuarios NO tienen control sobre ruta seleccionada</li>
+            <li><span class="highlight-pink">2.4 reportes diarios</span> de incidentes en plataformas de transporte</li>
+            <li>Conductores sin estabilidad: ingresos volátiles, sin protección laboral</li>
+            <li>Paradoja: usuarios pagan hasta <span class="highlight-pink">2x tarifa normal en horas pico</span></li>
+        </ul>
+
+        <h3>1.3 Descripción del Producto</h3>
+        <p><strong>KALUN</strong> es una aplicación móvil y web de movilidad urbana que proporciona un sistema integral de transporte compartido con <strong>control total del usuario</strong> sobre parámetros de viaje, seguridad y costo.</p>
+
+        <h3>1.3.1 Características Principales</h3>
+        <div class="grid">
+            <div class="card">
+                <h3>🗺️ Motor de Rutas Inteligente</h3>
+                <p>Algoritmo de optimización que calcula simultáneamente distancia, tiempo, congestión vial y emite <span class="highlight">3 opciones de ruta</span> con ETA en tiempo real</p>
+            </div>
+            <div class="card">
+                <h3>💰 Tarificación Transparente</h3>
+                <p>Usuario ve EXACTAMENTE cómo se calcula la tarifa (km × tarifa base + peaje + tiempo espera) <span class="highlight">ANTES de confirmar viaje</span></p>
+            </div>
+            <div class="card">
+                <h3>👥 Selector de Conductor</h3>
+                <p>Visualiza <span class="highlight">5-10 conductores disponibles</span> con foto, rating individual, viajes, vehículo, año modelo y placas</p>
+            </div>
+            <div class="card">
+                <h3>🛣️ Ruta Controlada por Pasajero</h3>
+                <p>Usuario confirma ruta previa a conductor, marca puntos intermedios, ve desviaciones >500m en tiempo real</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Seguridad Multicapa</h3>
+                <p>Compartir viaje con 3 contactos, grabación de audio consensuada, botón SOS, antecedentes actualizados <span class="highlight">semanalmente</span></p>
+            </div>
+            <div class="card">
+                <h3>✅ Verificación de Conductor</h3>
+                <p>Foto realtime vs documento, SMS confirmación, antecedentes penales/tráfico consultados en Policía Nacional</p>
+            </div>
+            <div class="card">
+                <h3>💵 Precios Dinámicos Justos</h3>
+                <p>Tarifa base COP $2.500, incremento 18% en horas pico, máximo 25% sobre base. <span class="highlight">75% conductor, 17% KALUN, 8% impuestos</span></p>
+            </div>
+            <div class="card">
+                <h3>📅 Programación de Viajes</h3>
+                <p>Reservar hasta <span class="highlight">30 días en avance</span>, cambiar hora hasta 2 horas antes, cancelar sin penalidad</p>
+            </div>
+            <div class="card">
+                <h3>💳 Billetera Digital Integrada</h3>
+                <p>Saldo virtual, recarga automática si saldo bajo, <span class="highlight">cashback 2%</span> en transacciones</p>
+            </div>
+            <div class="card">
+                <h3>📊 Historial y Análisis</h3>
+                <p>Visualizar todos los viajes, reportes de gasto mensual, descargar comprobante fiscal automático</p>
+            </div>
+            <div class="card">
+                <h3>💬 Chat en Vivo</h3>
+                <p>Comunicación sin compartir número telefónico real, geolocalización en tiempo real de conductor y pasajero</p>
+            </div>
+            <div class="card">
+                <h3>👑 Programa PREMIUM VIP</h3>
+                <p>Acceso a conductor rating 4.8+, viajes con <span class="highlight">15% descuento garantizado</span>, prioridad en cola</p>
+            </div>
+        </div>
+
+        <h3>1.3.2 Diferenciación vs Competencia</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th style="color: var(--neon-green);">KALUN</th>
+                    <th>Uber</th>
+                    <th>DiDi</th>
+                    <th>inDrive</th>
+                    <th>Cabify</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Control total ruta por usuario</strong></td>
+                    <td class="check">✓</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                </tr>
+                <tr>
+                    <td><strong>Transparencia tarifa PRE-viaje</strong></td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td><strong>Selector visual conductor (5-10)</strong></td>
+                    <td class="check">✓</td>
+                    <td class="check">✓ (2-3)</td>
+                    <td class="x">✗</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td><strong>Antecedentes conductor actualizados</strong></td>
+                    <td style="color: var(--neon-green);">Semanal</td>
+                    <td>Mensual</td>
+                    <td>Trimestral</td>
+                    <td>Anual</td>
+                    <td>Mensual</td>
+                </tr>
+                <tr>
+                    <td><strong>Botón pánico integrado</strong></td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td><strong>Grabación audio consensuada</strong></td>
+                    <td class="check">✓</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                </tr>
+                <tr>
+                    <td><strong>Descuentos garantizados Premium</strong></td>
+                    <td style="color: var(--neon-green);">15%</td>
+                    <td>Dinámicos</td>
+                    <td>10%</td>
+                    <td>Variables</td>
+                    <td>12%</td>
+                </tr>
+                <tr>
+                    <td><strong>Tarifa máxima regulada</strong></td>
+                    <td class="check">✓ (25% pico)</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                </tr>
+                <tr>
+                    <td><strong>Integración Transmilenio</strong></td>
+                    <td class="check">✓</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                    <td class="x">✗</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>1.4 Misión, Visión y Valores</h3>
+        <div class="grid">
+            <div class="card" style="border-left: 4px solid var(--neon-cyan);">
+                <h3 style="color: var(--neon-cyan);">🎯 MISIÓN</h3>
+                <p>Transformar la movilidad urbana en Bogotá proporcionando una plataforma de transporte compartido que devuelve control total al usuario, garantiza seguridad, transparencia en precios y genera estabilidad económica para conductores y comunidad.</p>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--neon-purple);">
+                <h3 style="color: var(--neon-purple);">🔮 VISIÓN</h3>
+                <p>Ser la plataforma de movilidad urbana más confiable, transparente y segura de Colombia hacia 2027, expandiendo a 5 ciudades principales con 500K usuarios activos mensuales, empleando 200+ trabajadores directos e impactando 50K+ conductores.</p>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--neon-pink);">
+                <h3 style="color: var(--neon-pink);">💎 VALORES</h3>
+                <ul style="margin: 0; padding-left: 0;">
+                    <li>✅ <strong>Transparencia Total:</strong> Cada número es visible al usuario</li>
+                    <li>✅ <strong>Seguridad:</strong> Inversión continua en verificación y antecedentes</li>
+                    <li>✅ <strong>Equidad:</strong> Conductores reciben 75% (vs 60% competencia)</li>
+                    <li>✅ <strong>Innovación:</strong> 15% ingresos destinados a I+D</li>
+                    <li>✅ <strong>Comunidad:</strong> Reinvertir en vecindarios, capacitación</li>
+                    <li>✅ <strong>Integridad:</strong> Cero tolerancia a corrupción</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ESTUDIO DE MERCADO -->
+    <section id="mercado" class="alt">
+        <h2>2️⃣ Estudio de Mercado</h2>
+        
+        <h3>2.1 Marketing 4P</h3>
+        <p class="section-subtitle">Estrategia de Producto, Precio, Plaza y Promoción</p>
+
+        <h3 style="color: var(--neon-cyan);">PRODUCTO</h3>
+        <p>KALUN es una aplicación de movilidad urbana integral que incluye:</p>
+        <ul>
+            <li><strong>Plataforma móvil:</strong> iOS y Android nativa (no hybrid)</li>
+            <li><strong>Portal web:</strong> Responsivo para desktop</li>
+            <li><strong>API de integración:</strong> Para terceros</li>
+            <li><strong>Sistema back-office:</strong> Administración de conductores, usuarios y rutas</li>
+            <li><strong>Billetera digital:</strong> Integrada con múltiples métodos de pago</li>
+            <li><strong>Sistema de scoring:</strong> Gamificación y recompensas</li>
+        </ul>
+
+        <h3 style="color: var(--neon-purple);">PRECIO</h3>
+        <p><strong>Estrategia de Pricing Escalonada:</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plan</th>
+                    <th>Precio Mensual</th>
+                    <th>Beneficios Principales</th>
+                    <th>Descuento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Básico (Por Viaje)</strong></td>
+                    <td>-</td>
+                    <td>Tarifa base $2.500 COP + $1.200 COP/km</td>
+                    <td>0%</td>
+                </tr>
+                <tr>
+                    <td><strong>Lite</strong></td>
+                    <td><span class="highlight">$29.900 COP</span></td>
+                    <td>10 viajes/mes con tarifa reducida</td>
+                    <td style="color: var(--neon-green);">15%</td>
+                </tr>
+                <tr>
+                    <td><strong>Plus</strong></td>
+                    <td><span class="highlight">$59.900 COP</span></td>
+                    <td>Viajes ilimitados, 10% cashback</td>
+                    <td style="color: var(--neon-green);">25%</td>
+                </tr>
+                <tr>
+                    <td><strong>Premium</strong></td>
+                    <td><span class="highlight">$89.900 COP</span></td>
+                    <td>Plan Plus + Seguro + SOS 24/7 + Rating 4.8+</td>
+                    <td style="color: var(--neon-green);">30%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Desglose de Ingresos por Tarifa:</strong></p>
+        <ul>
+            <li>📊 Conductor: <span class="highlight">75% de tarifa</span></li>
+            <li>📊 KALUN (plataforma): <span class="highlight">17%</span></li>
+            <li>📊 Impuestos: <span class="highlight">8%</span></li>
+        </ul>
+
+        <h3 style="color: var(--neon-pink);">PLAZA (Distribución)</h3>
+        <p><strong>Canales de Distribución:</strong></p>
+        <ul>
+            <li>📱 <strong>App Store (iOS):</strong> Publicada en Apple App Store</li>
+            <li>📱 <strong>Google Play (Android):</strong> Publicada en Google Play Store</li>
+            <li>🌐 <strong>Portal Web:</strong> kalun.com.co acceso 24/7</li>
+            <li>📍 <strong>Fase 1 (Mes 1-3):</strong> Usaquén, Chapinero, Suba</li>
+            <li>📍 <strong>Fase 2 (Mes 3-6):</strong> Kennedy, Bosa, Engativá</li>
+            <li>📍 <strong>Fase 3 (Mes 6-12):</strong> Bogotá completa (70% cobertura)</li>
+        </ul>
+
+        <h3 style="color: var(--neon-orange);">PROMOCIÓN (Marketing)</h3>
+        <p><strong>Presupuesto Total Marketing: COP $192.000.000 anual (COP $16.000.000/mes)</strong></p>
+        <div class="grid">
+            <div class="card">
+                <h3>📱 Marketing Digital (40%)</h3>
+                <p><span class="highlight">COP $76.800.000</span></p>
+                <ul style="font-size: 0.9rem;">
+                    <li>Google Ads: COP $20.000.000</li>
+                    <li>Facebook/Instagram: COP $18.000.000</li>
+                    <li>TikTok: COP $12.000.000</li>
+                    <li>SEO/SEM: COP $16.000.000</li>
+                    <li>Email: COP $10.800.000</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>🎉 Marketing Comunitario (35%)</h3>
+                <p><span class="highlight">COP $67.200.000</span></p>
+                <ul style="font-size: 0.9rem;">
+                    <li>Activaciones Transmilenio: COP $18.000.000</li>
+                    <li>Eventos locales: COP $15.000.000</li>
+                    <li>Community ambassadors: COP $20.000.000</li>
+                    <li>Partnership universidades: COP $14.200.000</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>📰 Relaciones Públicas (25%)</h3>
+                <p><span class="highlight">COP $48.000.000</span></p>
+                <ul style="font-size: 0.9rem;">
+                    <li>Agencia PR: COP $18.000.000</li>
+                    <li>Eventos lanzamiento: COP $12.000.000</li>
+                    <li>Contenido y blog: COP $10.000.000</li>
+                    <li>Reportes impacto: COP $8.000.000</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>2.1.2 Encuesta de Mercado (100 personas)</h3>
+        <p><strong>Resultados Principales:</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pregunta</th>
+                    <th>Respuesta Mayoritaria</th>
+                    <th>Porcentaje</th>
+                    <th>Implicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>¿Con qué frecuencia usa transporte compartido?</td>
+                    <td>Diariamente</td>
+                    <td><span class="highlight">35%</span></td>
+                    <td>Alto usuario base</td>
+                </tr>
+                <tr>
+                    <td>¿Principal razón para NO usar más?</td>
+                    <td>Precios altos</td>
+                    <td><span class="highlight">42%</span></td>
+                    <td>Oportunidad pricing</td>
+                </tr>
+                <tr>
+                    <td>¿Gasto mensual en transporte?</td>
+                    <td>COP $250.000-$500.000</td>
+                    <td><span class="highlight">35%</span></td>
+                    <td>User con disposición a pagar</td>
+                </tr>
+                <tr>
+                    <td>¿App preferida actualmente?</td>
+                    <td>Uber</td>
+                    <td><span class="highlight">58%</span></td>
+                    <td>Competencia principal</td>
+                </tr>
+                <tr>
+                    <td>¿Elegiría conductor antes de confirmar?</td>
+                    <td>Definitivamente sí</td>
+                    <td><span class="highlight">72%</span></td>
+                    <td><strong>FUERTE demanda feature</strong></td>
+                </tr>
+                <tr>
+                    <td>¿Pagaría membresía mensual?</td>
+                    <td>Sí (various plans)</td>
+                    <td><span class="highlight">74%</span></td>
+                    <td>Modelo viable</td>
+                </tr>
+                <tr>
+                    <td>¿Cambiaría de app por mejor experiencia?</td>
+                    <td>Definitivamente sí</td>
+                    <td><span class="highlight">58%</span></td>
+                    <td>Posibilidad churn</td>
+                </tr>
+                <tr>
+                    <td>¿Feature seguridad más importante?</td>
+                    <td>Antecedentes conductor</td>
+                    <td><span class="highlight">32%</span></td>
+                    <td>Prioridad #1</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>2.1.3 Demanda Potencial y Real</h3>
+        <p><strong>DEMANDA POTENCIAL (Total viajes posibles Bogotá):</strong></p>
+        <ul>
+            <li>Población Bogotá: <span class="highlight">8.200.000 habitantes</span></li>
+            <li>Rango edad 18-65 años: 72% = <span class="highlight">5.904.000</span></li>
+            <li>Acceso a smartphone: 87% = <span class="highlight">5.136.480</span></li>
+            <li>Usuarios potenciales plataformas: 70% = <span class="highlight">3.595.536</span></li>
+            <li>Viajes promedio/usuario/mes: 26.4 viajes</li>
+            <li><strong>DEMANDA POTENCIAL ANUAL: 1.138.937.109 viajes/año</strong></li>
+            <li><strong>DEMANDA POTENCIAL DIARIA: 3.120.371 viajes/día</strong></li>
+        </ul>
+
+        <p><strong>DEMANDA REAL AÑO 1 (Proyección KALUN):</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mes</th>
+                    <th>Usuarios Activos</th>
+                    <th>Viajes Totales</th>
+                    <th>Viajes Diarios Promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Enero</td>
+                    <td>2.000</td>
+                    <td>16.000</td>
+                    <td>533</td>
+                </tr>
+                <tr>
+                    <td>Febrero</td>
+                    <td>5.850</td>
+                    <td>46.800</td>
+                    <td>1.560</td>
+                </tr>
+                <tr>
+                    <td>Marzo</td>
+                    <td>12.500</td>
+                    <td>150.000</td>
+                    <td>5.000</td>
+                </tr>
+                <tr>
+                    <td>Junio</td>
+                    <td>45.500</td>
+                    <td>728.000</td>
+                    <td>24.267</td>
+                </tr>
+                <tr>
+                    <td>Diciembre</td>
+                    <td>105.640</td>
+                    <td>1.901.520</td>
+                    <td>63.384</td>
+                </tr>
+                <tr style="background: rgba(0, 240, 255, 0.1);">
+                    <td><strong>TOTAL AÑO 1</strong></td>
+                    <td><strong>70K promedio</strong></td>
+                    <td><strong>10.622.520</strong></td>
+                    <td><strong>29.101</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Market Share Esperado:</strong> 29.101 / 2.160.000 = <span class="highlight">1,35% del mercado potencial</span></p>
+
+        <h3>2.2 Análisis de Competencia</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th style="color: var(--neon-green);">KALUN</th>
+                    <th>Uber</th>
+                    <th>DiDi</th>
+                    <th>inDrive</th>
+                    <th>Cabify</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Año Entrada</strong></td>
+                    <td>2024</td>
+                    <td>2015</td>
+                    <td>2020</td>
+                    <td>2017</td>
+                    <td>2012</td>
+                </tr>
+                <tr>
+                    <td><strong>Usuarios Bogotá</strong></td>
+                    <td style="color: var(--neon-green);">70K</td>
+                    <td>2.800K</td>
+                    <td>800K</td>
+                    <td>400K</td>
+                    <td>250K</td>
+                </tr>
+                <tr>
+                    <td><strong>Market Share</strong></td>
+                    <td style="color: var(--neon-green);">1,3%</td>
+                    <td>52%</td>
+                    <td>15%</td>
+                    <td>7,5%</td>
+                    <td>4,7%</td>
+                </tr>
+                <tr>
+                    <td><strong>Tarifa Base</strong></td>
+                    <td style="color: var(--neon-green);">COP $2.500</td>
+                    <td>COP $2.500</td>
+                    <td>COP $2.500</td>
+                    <td>COP $1.500</td>
+                    <td>COP $3.000</td>
+                </tr>
+                <tr>
+                    <td><strong>Control Ruta Usuario</strong></td>
+                    <td class="check">✓ Sí</td>
+                    <td class="x">No</td>
+                    <td class="x">No</td>
+                    <td class="x">Parcial</td>
+                    <td class="x">No</td>
+                </tr>
+                <tr>
+                    <td><strong>Descuentos Garantizados</strong></td>
+                    <td style="color: var(--neon-green);">15-30%</td>
+                    <td>Variables</td>
+                    <td>10%</td>
+                    <td>Variables</td>
+                    <td>12%</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 3. ESTUDIO TÉCNICO -->
+    <section id="tecnico">
+        <h2>3️⃣ Estudio Técnico y Organizacional</h2>
+        
+        <h3>3.1 Localización Física</h3>
+        <p><strong>KALUN se localiza en: Usaquén, Bogotá, Cra 11A con Calle 127</strong></p>
+        <ul>
+            <li>📍 Arrendamiento: COP $36.000.000 anual (COP $3.000.000/m²)</li>
+            <li>🔒 Seguridad: Zona Usaquén (criminalidad 8/100K), acceso 24/7, ISO 27001</li>
+            <li>♿ Accesibilidad: 2 cuadras Transmilenio Calle 127, 5 min a cualquier zona</li>
+            <li>🌐 Conectividad: Fibra 1Gbps + backup 4G, AWS Bogotá region (latencia 2ms)</li>
+            <li>🚗 Transporte: Sobre Av. Calle 26, 8km del centro</li>
+        </ul>
+
+        <h3>3.2 Tamaño y Distribución</h3>
+        <ul>
+            <li>📐 <strong>Área total: 910 m²</strong> en 4 pisos</li>
+            <li>📊 Piso 1: Recepción, comedor, sanitarios</li>
+            <li>📊 Piso 2: Administración, sala junta</li>
+            <li>📊 Piso 3: Desarrollo abierto (backend/frontend/mobile/QA)</li>
+            <li>📊 Piso 4: Operaciones, SAC, analytics</li>
+            <li>👥 <strong>50 trabajadores</strong> (CEO, CFO, Legal, CTO, Desarrolladores, SAC, Community)</li>
+        </ul>
+
+        <h3 style="margin-top: 3rem;">Planos 2D - Distribución por Pisos</h3>
+        
+        <!-- PISO 1 -->
+        <div style="margin: 2rem 0; padding: 2rem; background: rgba(0,240,255,0.1); border-radius: 15px; border-left: 4px solid var(--neon-cyan);">
+            <h3 style="color: var(--neon-cyan); margin-top: 0;">PISO 1: Recepción, Comedor, Sanitarios (230 m²)</h3>
+            <svg viewBox="0 0 500 300" style="width: 100%; max-width: 600px; height: auto; margin: 1rem 0;">
+                <!-- Marco exterior -->
+                <rect x="20" y="20" width="460" height="260" fill="#1a1f3a" stroke="var(--neon-cyan)" stroke-width="3"/>
+                
+                <!-- Recepción (izquierda superior) -->
+                <rect x="30" y="30" width="140" height="100" fill="rgba(0,240,255,0.2)" stroke="var(--neon-cyan)" stroke-width="2"/>
+                <text x="100" y="85" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">RECEPCIÓN</text>
+                <text x="100" y="105" font-size="11" fill="#aaa" text-anchor="middle">50 m²</text>
+                
+                <!-- Comedor (centro superior) -->
+                <rect x="190" y="30" width="140" height="100" fill="rgba(193,0,255,0.2)" stroke="var(--neon-purple)" stroke-width="2"/>
+                <text x="260" y="85" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">COMEDOR</text>
+                <text x="260" y="105" font-size="11" fill="#aaa" text-anchor="middle">60 m²</text>
+                
+                <!-- Sanitarios (derecha superior) -->
+                <rect x="350" y="30" width="130" height="100" fill="rgba(255,0,110,0.2)" stroke="var(--neon-pink)" stroke-width="2"/>
+                <text x="415" y="85" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">SANITARIOS</text>
+                <text x="415" y="105" font-size="11" fill="#aaa" text-anchor="middle">40 m²</text>
+                
+                <!-- Escaleras (centro) -->
+                <rect x="200" y="160" width="100" height="80" fill="rgba(0,255,136,0.2)" stroke="var(--neon-green)" stroke-width="2"/>
+                <text x="250" y="205" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">ESCALERAS</text>
+                <text x="250" y="225" font-size="11" fill="#aaa" text-anchor="middle">25 m²</text>
+                
+                <!-- Área abierta (izquierda inferior) -->
+                <rect x="30" y="160" width="140" height="120" fill="rgba(0,255,136,0.15)" stroke="var(--neon-green)" stroke-width="2"/>
+                <text x="100" y="220" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">ÁREA ABIERTA</text>
+                <text x="100" y="240" font-size="11" fill="#aaa" text-anchor="middle">55 m²</text>
+                
+                <!-- Almacén (derecha inferior) -->
+                <rect x="350" y="160" width="130" height="120" fill="rgba(255,107,0,0.15)" stroke="var(--neon-orange)" stroke-width="2"/>
+                <text x="415" y="220" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">ALMACÉN</text>
+                <text x="415" y="240" font-size="11" fill="#aaa" text-anchor="middle">30 m²</text>
+                
+                <!-- Dimensiones -->
+                <text x="10" y="160" font-size="12" fill="var(--neon-cyan)" font-weight="bold">50m</text>
+                <text x="240" y="300" font-size="12" fill="var(--neon-cyan)" font-weight="bold">25m</text>
+            </svg>
+        </div>
+
+        <!-- PISO 2 -->
+        <div style="margin: 2rem 0; padding: 2rem; background: rgba(193,0,255,0.1); border-radius: 15px; border-left: 4px solid var(--neon-purple);">
+            <h3 style="color: var(--neon-purple); margin-top: 0;">PISO 2: Administración, Sala Junta (230 m²)</h3>
+            <svg viewBox="0 0 500 300" style="width: 100%; max-width: 600px; height: auto; margin: 1rem 0;">
+                <!-- Marco exterior -->
+                <rect x="20" y="20" width="460" height="260" fill="#1a1f3a" stroke="var(--neon-purple)" stroke-width="3"/>
+                
+                <!-- CEO/CFO Offices -->
+                <rect x="30" y="30" width="100" height="100" fill="rgba(193,0,255,0.2)" stroke="var(--neon-purple)" stroke-width="2"/>
+                <text x="80" y="75" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">CEO</text>
+                <text x="80" y="95" font-size="11" fill="#aaa" text-anchor="middle">35 m²</text>
+                
+                <!-- CFO Office -->
+                <rect x="150" y="30" width="100" height="100" fill="rgba(193,0,255,0.2)" stroke="var(--neon-purple)" stroke-width="2"/>
+                <text x="200" y="75" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">CFO</text>
+                <text x="200" y="95" font-size="11" fill="#aaa" text-anchor="middle">35 m²</text>
+                
+                <!-- Sala Junta -->
+                <rect x="270" y="30" width="210" height="100" fill="rgba(0,240,255,0.2)" stroke="var(--neon-cyan)" stroke-width="2"/>
+                <text x="375" y="75" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">SALA DE JUNTA</text>
+                <text x="375" y="95" font-size="11" fill="#aaa" text-anchor="middle">70 m²</text>
+                
+                <!-- Legal Department -->
+                <rect x="30" y="160" width="140" height="120" fill="rgba(255,0,110,0.2)" stroke="var(--neon-pink)" stroke-width="2"/>
+                <text x="100" y="220" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">LEGAL</text>
+                <text x="100" y="240" font-size="11" fill="#aaa" text-anchor="middle">45 m²</text>
+                
+                <!-- RRHH Department -->
+                <rect x="190" y="160" width="140" height="120" fill="rgba(0,255,136,0.2)" stroke="var(--neon-green)" stroke-width="2"/>
+                <text x="260" y="220" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">RRHH</text>
+                <text x="260" y="240" font-size="11" fill="#aaa" text-anchor="middle">45 m²</text>
+                
+                <!-- Escaleras -->
+                <rect x="350" y="160" width="130" height="120" fill="rgba(0,255,136,0.15)" stroke="var(--neon-green)" stroke-width="2"/>
+                <text x="415" y="215" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">ESCALERAS</text>
+                <text x="415" y="235" font-size="11" fill="#aaa" text-anchor="middle">& PASILLO</text>
+                
+                <!-- Dimensiones -->
+                <text x="10" y="160" font-size="12" fill="var(--neon-purple)" font-weight="bold">50m</text>
+                <text x="240" y="300" font-size="12" fill="var(--neon-purple)" font-weight="bold">25m</text>
+            </svg>
+        </div>
+
+        <!-- PISO 3 -->
+        <div style="margin: 2rem 0; padding: 2rem; background: rgba(0,255,136,0.1); border-radius: 15px; border-left: 4px solid var(--neon-green);">
+            <h3 style="color: var(--neon-green); margin-top: 0;">PISO 3: Desarrollo Abierto (250 m²)</h3>
+            <svg viewBox="0 0 500 300" style="width: 100%; max-width: 600px; height: auto; margin: 1rem 0;">
+                <!-- Marco exterior -->
+                <rect x="20" y="20" width="460" height="260" fill="#1a1f3a" stroke="var(--neon-green)" stroke-width="3"/>
+                
+                <!-- Backend Team -->
+                <rect x="30" y="30" width="105" height="120" fill="rgba(0,240,255,0.2)" stroke="var(--neon-cyan)" stroke-width="2"/>
+                <text x="82.5" y="85" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">BACKEND</text>
+                <text x="82.5" y="105" font-size="11" fill="#aaa" text-anchor="middle">60 m²</text>
+                <text x="82.5" y="120" font-size="10" fill="#aaa" text-anchor="middle">(6 devs)</text>
+                
+                <!-- Frontend Team -->
+                <rect x="155" y="30" width="105" height="120" fill="rgba(193,0,255,0.2)" stroke="var(--neon-purple)" stroke-width="2"/>
+                <text x="207.5" y="85" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">FRONTEND</text>
+                <text x="207.5" y="105" font-size="11" fill="#aaa" text-anchor="middle">55 m²</text>
+                <text x="207.5" y="120" font-size="10" fill="#aaa" text-anchor="middle">(5 devs)</text>
+                
+                <!-- Mobile Team -->
+                <rect x="280" y="30" width="100" height="120" fill="rgba(255,107,0,0.2)" stroke="var(--neon-orange)" stroke-width="2"/>
+                <text x="330" y="85" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">MOBILE</text>
+                <text x="330" y="105" font-size="11" fill="#aaa" text-anchor="middle">50 m²</text>
+                <text x="330" y="120" font-size="10" fill="#aaa" text-anchor="middle">(4 devs)</text>
+                
+                <!-- QA Team -->
+                <rect x="400" y="30" width="80" height="120" fill="rgba(255,0,110,0.2)" stroke="var(--neon-pink)" stroke-width="2"/>
+                <text x="440" y="85" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">QA</text>
+                <text x="440" y="105" font-size="11" fill="#aaa" text-anchor="middle">40 m²</text>
+                <text x="440" y="120" font-size="10" fill="#aaa" text-anchor="middle">(4 qa)</text>
+                
+                <!-- DevOps / Infrastructure -->
+                <rect x="30" y="180" width="220" height="100" fill="rgba(0,240,255,0.15)" stroke="var(--neon-cyan)" stroke-width="2"/>
+                <text x="140" y="235" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">DEVOPS / INFRASTRUCTURE</text>
+                <text x="140" y="255" font-size="11" fill="#aaa" text-anchor="middle">110 m² (1 DevOps + Servidores)</text>
+                
+                <!-- Escaleras & Descanso -->
+                <rect x="280" y="180" width="200" height="100" fill="rgba(0,255,136,0.2)" stroke="var(--neon-green)" stroke-width="2"/>
+                <text x="380" y="225" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">ESCALERAS</text>
+                <text x="380" y="245" font-size="11" fill="#aaa" text-anchor="middle">PASILLO & DESCANSO</text>
+                
+                <!-- Dimensiones -->
+                <text x="10" y="160" font-size="12" fill="var(--neon-green)" font-weight="bold">50m</text>
+                <text x="240" y="300" font-size="12" fill="var(--neon-green)" font-weight="bold">25m</text>
+            </svg>
+        </div>
+
+        <!-- PISO 4 -->
+        <div style="margin: 2rem 0; padding: 2rem; background: rgba(255,0,110,0.1); border-radius: 15px; border-left: 4px solid var(--neon-pink);">
+            <h3 style="color: var(--neon-pink); margin-top: 0;">PISO 4: Operaciones, SAC, Analytics (200 m²)</h3>
+            <svg viewBox="0 0 500 300" style="width: 100%; max-width: 600px; height: auto; margin: 1rem 0;">
+                <!-- Marco exterior -->
+                <rect x="20" y="20" width="460" height="260" fill="#1a1f3a" stroke="var(--neon-pink)" stroke-width="3"/>
+                
+                <!-- SAC Team -->
+                <rect x="30" y="30" width="150" height="120" fill="rgba(255,0,110,0.2)" stroke="var(--neon-pink)" stroke-width="2"/>
+                <text x="105" y="80" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">SAC TEAM</text>
+                <text x="105" y="100" font-size="11" fill="#aaa" text-anchor="middle">100 m²</text>
+                <text x="105" y="115" font-size="10" fill="#aaa" text-anchor="middle">(8 especialistas)</text>
+                
+                <!-- Analytics & BI -->
+                <rect x="210" y="30" width="140" height="120" fill="rgba(0,240,255,0.2)" stroke="var(--neon-cyan)" stroke-width="2"/>
+                <text x="280" y="80" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">ANALYTICS</text>
+                <text x="280" y="100" font-size="11" fill="#aaa" text-anchor="middle">50 m²</text>
+                <text x="280" y="115" font-size="10" fill="#aaa" text-anchor="middle">(2 analistas)</text>
+                
+                <!-- Community Team -->
+                <rect x="380" y="30" width="100" height="120" fill="rgba(0,255,136,0.2)" stroke="var(--neon-green)" stroke-width="2"/>
+                <text x="430" y="80" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">COMMUNITY</text>
+                <text x="430" y="100" font-size="11" fill="#aaa" text-anchor="middle">30 m²</text>
+                <text x="430" y="115" font-size="10" fill="#aaa" text-anchor="middle">(2 managers)</text>
+                
+                <!-- Operaciones Principal -->
+                <rect x="30" y="180" width="450" height="100" fill="rgba(193,0,255,0.2)" stroke="var(--neon-purple)" stroke-width="2"/>
+                <text x="255" y="230" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">CENTRO DE OPERACIONES - MONITOREO EN TIEMPO REAL</text>
+                <text x="255" y="250" font-size="11" fill="#aaa" text-anchor="middle">20 m² (Pantallas, dashboard, seguimiento de viajes y métricas)</text>
+                
+                <!-- Dimensiones -->
+                <text x="10" y="160" font-size="12" fill="var(--neon-pink)" font-weight="bold">50m</text>
+                <text x="240" y="300" font-size="12" fill="var(--neon-pink)" font-weight="bold">25m</text>
+            </svg>
+        </div>
+
+        <h3>3.3 Infraestructura y Equipos</h3>
+        <p><strong>Inversión Total en Equipos: COP $952.200.000</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Equipo</th>
+                    <th>Especificación</th>
+                    <th>Cantidad</th>
+                    <th>V. Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Computadoras Desktop</td>
+                    <td>Dell XPS 15, 32GB RAM, 1TB SSD</td>
+                    <td>15</td>
+                    <td>COP $97.500.000</td>
+                </tr>
+                <tr>
+                    <td>Laptops Desarrollo</td>
+                    <td>MacBook Pro M3, 16GB, 512GB</td>
+                    <td>20</td>
+                    <td>COP $178.000.000</td>
+                </tr>
+                <tr>
+                    <td>Servidores</td>
+                    <td>Dell PowerEdge R750, 128GB RAM</td>
+                    <td>2</td>
+                    <td>COP $56.000.000</td>
+                </tr>
+                <tr>
+                    <td>Storages NAS</td>
+                    <td>Synology 8 bahías, 96TB</td>
+                    <td>1</td>
+                    <td>COP $12.000.000</td>
+                </tr>
+                <tr>
+                    <td>Licencias Cloud</td>
+                    <td>AWS Enterprise + GitHub Enterprise</td>
+                    <td>-</td>
+                    <td>COP $76.000.000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3.4 Recursos Humanos</h3>
+        <p><strong>NÓMINA AÑO 1: COP $1.919.200.000</strong></p>
+        
+        <h3 style="color: var(--neon-green);">Equipo Directivo</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cargo</th>
+                    <th>Cantidad</th>
+                    <th>Salario Mensual</th>
+                    <th>Salario Anual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>CEO / Gerente General</strong></td>
+                    <td>1</td>
+                    <td>COP $15.000.000</td>
+                    <td>COP $180.000.000</td>
+                </tr>
+                <tr>
+                    <td><strong>CRO / Director Comercial</strong></td>
+                    <td>1</td>
+                    <td>COP $12.000.000</td>
+                    <td>COP $144.000.000</td>
+                </tr>
+                <tr>
+                    <td><strong>CTO / Director Tecnología</strong></td>
+                    <td>1</td>
+                    <td>COP $12.000.000</td>
+                    <td>COP $144.000.000</td>
+                </tr>
+                <tr>
+                    <td><strong>CPO / Director RRHH</strong></td>
+                    <td>1</td>
+                    <td>COP $8.000.000</td>
+                    <td>COP $96.000.000</td>
+                </tr>
+                <tr>
+                    <td><strong>CFO / Contador</strong></td>
+                    <td>1</td>
+                    <td>COP $4.500.000</td>
+                    <td>COP $54.000.000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="color: var(--neon-purple);">Equipo Desarrollo (18 personas)</h3>
+        <ul style="columns: 2;">
+            <li>Backend Senior (3): COP $9.000.000/mes c/u</li>
+            <li>Backend Jr (3): COP $5.500.000/mes c/u</li>
+            <li>Frontend Senior (2): COP $8.500.000/mes c/u</li>
+            <li>Frontend Jr (3): COP $5.000.000/mes c/u</li>
+            <li>Mobile iOS (2): COP $8.500.000/mes c/u</li>
+            <li>Mobile Android (2): COP $8.000.000/mes c/u</li>
+            <li>QA Automation (2): COP $6.500.000/mes c/u</li>
+            <li>QA Manual (2): COP $4.500.000/mes c/u</li>
+            <li>DevOps (1): COP $9.500.000/mes</li>
+        </ul>
+
+        <h3 style="color: var(--neon-pink);">Equipo Operaciones (14 personas)</h3>
+        <ul style="columns: 2;">
+            <li>Especialista SAC (8): COP $2.800.000/mes c/u</li>
+            <li>Community Manager (2): COP $3.500.000/mes c/u</li>
+            <li>Analista de Datos (2): COP $7.000.000/mes c/u</li>
+            <li>Coordinador Operaciones (1): COP $3.800.000/mes</li>
+            <li>Auxiliar Administrativo (1): COP $2.000.000/mes</li>
+        </ul>
+
+        <h3>3.5 Organigrama Jerárquico</h3>
+        <pre style="background: rgba(0,240,255,0.1); padding: 1.5rem; border-radius: 10px; overflow-x: auto;">
+CEO / Gerente General
+│
+├── Director Comercial (CRO)
+│   ├── Especialista SAC (8)
+│   ├── Community Manager (2)
+│   └── Coordinador Comercial
+│
+├── Director Tecnología (CTO)
+│   ├── Arquitecto Soluciones (1)
+│   ├── Backend Lead → Backend Sr (3) + Jr (3)
+│   ├── Frontend Lead → Frontend Sr (2) + Jr (3)
+│   ├── Mobile Lead → iOS (2) + Android (2)
+│   ├── QA Lead → Automation (2) + Manual (2)
+│   └── DevOps Engineer (1)
+│
+├── Director RRHH (CPO)
+│   └── Asistente RRHH
+│
+├── Contador (CFO)
+│   └── Asistente Contable
+│
+└── Analista de Datos (2)</pre>
+
+        <h3>3.6 Procesos Operacionales Clave</h3>
+        <div class="grid">
+            <div class="card">
+                <h3>P-001: Onboarding Usuario</h3>
+                <p style="font-size: 0.9rem;">
+                    <strong>1.</strong> Descarga app o acceso web<br>
+                    <strong>2.</strong> Signup: email, teléfono, nombre<br>
+                    <strong>3.</strong> Validación email (link)<br>
+                    <strong>4.</strong> Código SMS confirmación<br>
+                    <strong>5.</strong> Foto documento (AI valida)<br>
+                    <strong>6.</strong> Foto selfie vs documento<br>
+                    <strong>7.</strong> Aceptación términos<br>
+                    <strong>8.</strong> ✅ Usuario activo
+                </p>
+            </div>
+            <div class="card">
+                <h3>P-002: Solicitud de Viaje</h3>
+                <p style="font-size: 0.9rem;">
+                    <strong>1.</strong> Ingresa origen/destino<br>
+                    <strong>2.</strong> App calcula ruta, muestra ETA<br>
+                    <strong>3.</strong> Confirma o intenta otra ruta<br>
+                    <strong>4.</strong> Muestra 5-10 conductores<br>
+                    <strong>5.</strong> Usuario selecciona conductor<br>
+                    <strong>6.</strong> Sistema asigna viaje<br>
+                    <strong>7.</strong> Conductor acepta en 30seg<br>
+                    <strong>8.</strong> ✅ Viaje comienza
+                </p>
+            </div>
+            <div class="card">
+                <h3>P-003: Reporte de Incidente</h3>
+                <p style="font-size: 0.9rem;">
+                    <strong>1.</strong> Usuario presiona SOS<br>
+                    <strong>2.</strong> Captura ubicación, fotos, audio<br>
+                    <strong>3.</strong> Categoría: acoso, accidente, robo<br>
+                    <strong>4.</strong> Notifica SAC inmediatamente<br>
+                    <strong>5.</strong> SAC abre ticket<br>
+                    <strong>6.</strong> Investiga, recopila evidencia<br>
+                    <strong>7.</strong> Decisión: reembolso o sanción<br>
+                    <strong>8.</strong> ✅ Comunicación 48 horas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ESTUDIO FINANCIERO -->
+    <section id="financiero" class="alt">
+        <h2>4️⃣ Estudio Financiero</h2>
+        
+        <h3>4.1 Ingresos - Proyección Detallada Año 1</h3>
+        <p><strong>Ingresos derivan de 4 fuentes principales:</strong></p>
+        <div class="grid">
+            <div class="card" style="border-left: 4px solid var(--neon-green);">
+                <h3>💰 Comisión por Viajes</h3>
+                <ul style="margin: 0;">
+                    <li>Tarifa promedio: COP $8.500</li>
+                    <li>Comisión KALUN: <span class="highlight">17%</span></li>
+                    <li>Ingreso/viaje: COP $1.445</li>
+                    <li>Total año 1: <span class="highlight">COP $15.348.145.080</span></li>
+                </ul>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--neon-purple);">
+                <h3>📊 Suscripciones Mensuales</h3>
+                <ul style="margin: 0;">
+                    <li>Lite: 28K × COP $29.900</li>
+                    <li>Plus: 14K × COP $59.900</li>
+                    <li>Premium: 7K × COP $89.900</li>
+                    <li>Total: <span class="highlight">COP $44.300.000.000</span></li>
+                </ul>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--neon-pink);">
+                <h3>📱 Publicidad y Partnerships</h3>
+                <ul style="margin: 0;">
+                    <li>Google Ads: COP $12.000.000</li>
+                    <li>Sponsorships: COP $8.000.000</li>
+                    <li>Datos anonimizados: COP $8.000.000</li>
+                    <li>Total: <span class="highlight">COP $28.000.000</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>4.2 Costos Operacionales</h3>
+        <p><strong>COSTOS DIRECTOS: COP $6.480.000.000 (10,9% ingresos)</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Mes</th>
+                    <th>Cálculo</th>
+                    <th>Anual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Infraestructura Cloud</strong></td>
+                    <td>COP $315.000.000</td>
+                    <td>70K users × COP $4.500/mes</td>
+                    <td>COP $3.780.000.000</td>
+                </tr>
+                <tr>
+                    <td><strong>Payment Gateway</strong></td>
+                    <td>COP $120.000.000</td>
+                    <td>2% ingresos procesados</td>
+                    <td>COP $1.440.000.000</td>
+                </tr>
+                <tr>
+                    <td><strong>APIs Externas</strong></td>
+                    <td>COP $45.000.000</td>
+                    <td>Google Maps, Twilio, etc</td>
+                    <td>COP $540.000.000</td>
+                </tr>
+                <tr>
+                    <td><strong>Verificación Conductores</strong></td>
+                    <td>COP $60.000.000</td>
+                    <td>Antecedentes semanales</td>
+                    <td>COP $720.000.000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>GASTOS OPERACIONALES: COP $3.128.400.000 anual</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Mes</th>
+                    <th>Detalle</th>
+                    <th>Anual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: rgba(0,240,255,0.1);">
+                    <td colspan="4"><strong>ADMINISTRACIÓN: 54,3%</strong></td>
+                </tr>
+                <tr>
+                    <td>Nómina Administrativos</td>
+                    <td>COP $124.000.000</td>
+                    <td>CEO, CFO, Legal, RRHH</td>
+                    <td>COP $1.488.000.000</td>
+                </tr>
+                <tr>
+                    <td>Arriendo Oficina</td>
+                    <td>COP $3.000.000</td>
+                    <td>910 m² Usaquén</td>
+                    <td>COP $36.000.000</td>
+                </tr>
+                <tr>
+                    <td>Servicios</td>
+                    <td>COP $300.000</td>
+                    <td>Luz, agua, internet</td>
+                    <td>COP $3.600.000</td>
+                </tr>
+                <tr>
+                    <td>Seguros</td>
+                    <td>COP $400.000</td>
+                    <td>Responsabilidad civil</td>
+                    <td>COP $4.800.000</td>
+                </tr>
+                <tr>
+                    <td>Software Admin</td>
+                    <td>COP $5.000.000</td>
+                    <td>ERP, HR, contabilidad</td>
+                    <td>COP $60.000.000</td>
+                </tr>
+                <tr>
+                    <td>Auditoría Externa</td>
+                    <td>COP $3.000.000</td>
+                    <td>Trimestral</td>
+                    <td>COP $12.000.000</td>
+                </tr>
+                <tr style="background: rgba(193,0,255,0.1);">
+                    <td colspan="4"><strong>VENTAS Y MARKETING: 42,6%</strong></td>
+                </tr>
+                <tr>
+                    <td>Nómina Ventas</td>
+                    <td>COP $85.000.000</td>
+                    <td>Community, CRM, especialistas</td>
+                    <td>COP $1.020.000.000</td>
+                </tr>
+                <tr>
+                    <td>Publicidad Digital</td>
+                    <td>COP $6.400.000</td>
+                    <td>Google, Social, etc</td>
+                    <td>COP $76.800.000</td>
+                </tr>
+                <tr>
+                    <td>Marketing Comunitario</td>
+                    <td>COP $5.600.000</td>
+                    <td>Eventos, activaciones</td>
+                    <td>COP $67.200.000</td>
+                </tr>
+                <tr>
+                    <td>RP y Contenido</td>
+                    <td>COP $6.000.000</td>
+                    <td>Agencia PR, blogging</td>
+                    <td>COP $72.000.000</td>
+                </tr>
+                <tr style="background: rgba(255,0,110,0.1);">
+                    <td colspan="4"><strong>GASTOS FINANCIEROS: 3,1%</strong></td>
+                </tr>
+                <tr>
+                    <td>Intereses Créditos</td>
+                    <td>COP $5.000.000</td>
+                    <td>Línea COP 100.000.000</td>
+                    <td>COP $60.000.000</td>
+                </tr>
+                <tr>
+                    <td>Comisiones Bancarias</td>
+                    <td>COP $2.000.000</td>
+                    <td>Transferencias, movimientos</td>
+                    <td>COP $24.000.000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>4.3 Estado de Pérdidas y Ganancias - AÑO 1</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th style="text-align: right;">Valor COP</th>
+                    <th style="text-align: right;">% Ingresos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: rgba(0,240,255,0.2);">
+                    <td><strong>INGRESOS TOTALES</strong></td>
+                    <td style="text-align: right;"><span class="highlight">$59.664.395.080</span></td>
+                    <td style="text-align: right;">100%</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2rem;">Comisión viajes</td>
+                    <td style="text-align: right;">$15.348.145.080</td>
+                    <td style="text-align: right;">25,7%</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2rem;">Suscripciones</td>
+                    <td style="text-align: right;">$44.300.000.000</td>
+                    <td style="text-align: right;">74,3%</td>
+                </tr>
+                <tr style="border-top: 2px solid var(--neon-cyan);">
+                    <td><strong>MENOS: COSTO DE VENTAS</strong></td>
+                    <td style="text-align: right;">($6.480.000.000)</td>
+                    <td style="text-align: right;">10,9%</td>
+                </tr>
+                <tr style="background: rgba(0,255,136,0.2);">
+                    <td><strong>UTILIDAD BRUTA</strong></td>
+                    <td style="text-align: right;"><span class="highlight">$53.184.395.080</span></td>
+                    <td style="text-align: right;"><strong>89,1%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>MENOS: GASTOS OPERACIONALES</strong></td>
+                    <td style="text-align: right;">($3.128.400.000)</td>
+                    <td style="text-align: right;">5,2%</td>
+                </tr>
+                <tr style="background: rgba(193,0,255,0.2);">
+                    <td><strong>EBITDA</strong></td>
+                    <td style="text-align: right;"><span class="highlight">$50.055.995.080</span></td>
+                    <td style="text-align: right;"><strong>83,9%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>MENOS: DEPRECIACIÓN</strong></td>
+                    <td style="text-align: right;">($380.000.000)</td>
+                    <td style="text-align: right;">0,6%</td>
+                </tr>
+                <tr style="background: rgba(255,0,110,0.2);">
+                    <td><strong>EBIT (Utilidad Operacional)</strong></td>
+                    <td style="text-align: right;"><span class="highlight">$49.675.995.080</span></td>
+                    <td style="text-align: right;"><strong>83,2%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>MENOS: IMPUESTOS (30%)</strong></td>
+                    <td style="text-align: right;">($14.902.498.524)</td>
+                    <td style="text-align: right;">25%</td>
+                </tr>
+                <tr style="background: rgba(0,240,255,0.3); font-weight: bold;">
+                    <td><strong>UTILIDAD NETA</strong></td>
+                    <td style="text-align: right;"><span class="highlight">$33.142.796.804</span></td>
+                    <td style="text-align: right;"><strong>55,5%</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>4.4 Análisis Financiero - Conclusiones</h3>
+        <div class="grid">
+            <div class="card">
+                <h3>💹 Rentabilidad</h3>
+                <ul style="margin: 0;">
+                    <li><strong>Margen Neto:</strong> <span class="highlight">55,5%</span></li>
+                    <li><strong>Margen Bruto:</strong> 89,1%</li>
+                    <li><strong>EBITDA Margin:</strong> 83,9%</li>
+                    <li><strong>ROI Año 1:</strong> <span class="highlight">331%</span></li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>📊 Generación de Caja</h3>
+                <ul style="margin: 0;">
+                    <li><strong>Utilidad Neta:</strong> COP $33.142.796.804</li>
+                    <li><strong>Caja Positiva:</strong> Desde mes 1</li>
+                    <li><strong>Capacidad Reinversión:</strong> COP $33.000.000.000</li>
+                    <li><strong>Proyección Mes 12:</strong> COP $8.450.893.600</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>💰 Solvencia</h3>
+                <ul style="margin: 0;">
+                    <li><strong>Apalancamiento:</strong> 26% pasivos</li>
+                    <li><strong>Patrimonio:</strong> 74% del balance</li>
+                    <li><strong>Caja Inicial:</strong> $15.000.000.000</li>
+                    <li><strong>Balance Sólido:</strong> ✅ Viable</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>4.5 Proyección Mensual Año 1 - Ingresos y Viajes</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mes</th>
+                    <th>Viajes</th>
+                    <th>Ingresos Comisión</th>
+                    <th>Ingresos Suscripción</th>
+                    <th>TOTAL INGRESOS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Enero</td>
+                    <td>16.000</td>
+                    <td>$23.120.000</td>
+                    <td>$800.000.000</td>
+                    <td>$823.720.000</td>
+                </tr>
+                <tr>
+                    <td>Febrero</td>
+                    <td>46.800</td>
+                    <td>$67.626.000</td>
+                    <td>$1.500.000.000</td>
+                    <td>$1.569.226.000</td>
+                </tr>
+                <tr>
+                    <td>Marzo</td>
+                    <td>150.000</td>
+                    <td>$216.750.000</td>
+                    <td>$2.500.000.000</td>
+                    <td>$2.717.500.000</td>
+                </tr>
+                <tr>
+                    <td>Junio</td>
+                    <td>728.000</td>
+                    <td>$1.051.360.000</td>
+                    <td>$3.700.000.000</td>
+                    <td>$4.752.660.000</td>
+                </tr>
+                <tr>
+                    <td>Septiembre</td>
+                    <td>1.412.640</td>
+                    <td>$2.040.311.280</td>
+                    <td>$4.800.000.000</td>
+                    <td>$6.841.961.280</td>
+                </tr>
+                <tr style="background: rgba(0,240,255,0.1);">
+                    <td><strong>Diciembre</strong></td>
+                    <td><strong>1.901.520</strong></td>
+                    <td><strong>$2.747.693.600</strong></td>
+                    <td><strong>$5.700.000.000</strong></td>
+                    <td style="color: var(--neon-green); font-weight: bold;">$8.450.893.600</td>
+                </tr>
+                <tr style="background: rgba(193,0,255,0.1); font-weight: bold;">
+                    <td>TOTAL AÑO 1</td>
+                    <td>10.622.520</td>
+                    <td>$15.348.145.080</td>
+                    <td>$44.300.000.000</td>
+                    <td style="color: var(--neon-purple); font-weight: bold;">$59.664.395.080</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>4.6 Plan Estratégico 4 Años</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Año</th>
+                    <th>Objetivo Principal</th>
+                    <th>Usuarios Activos</th>
+                    <th>Ciudades</th>
+                    <th>Métrica Éxito</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Año 1</strong></td>
+                    <td>Penetración Bogotá</td>
+                    <td><span class="highlight">70K</span></td>
+                    <td>1</td>
+                    <td>15% market share</td>
+                </tr>
+                <tr>
+                    <td><strong>Año 2</strong></td>
+                    <td>Expansión a Medellín y Cali</td>
+                    <td><span class="highlight">140K</span></td>
+                    <td>3</td>
+                    <td>Rentabilidad operacional</td>
+                </tr>
+                <tr>
+                    <td><strong>Año 3</strong></td>
+                    <td>Consolidación nacional</td>
+                    <td><span class="highlight">300K</span></td>
+                    <td>5</td>
+                    <td>Utilidad neta positiva</td>
+                </tr>
+                <tr style="background: rgba(0,240,255,0.1);">
+                    <td><strong>Año 4</strong></td>
+                    <td>Preparación expansión regional</td>
+                    <td><span class="highlight">500K</span></td>
+                    <td>5</td>
+                    <td>Posición #2 Colombia</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ASPECTOS LEGALES -->
+    <section id="legal">
+        <h2>⚖️ Aspectos Legales y Regulatorios</h2>
+        
+        <h3>Tipo de Empresa: SAS (Sociedad por Acciones Simplificada)</h3>
+        <p>Se recomienda estructura <strong>SAS</strong> por los siguientes factores:</p>
+        <ul>
+            <li>✅ Flexibilidad estructural para startups</li>
+            <li>✅ Atracción de inversionistas ángeles y fondos de riesgo</li>
+            <li>✅ Acceso a beneficios tributarios (Ley 1819/2016)</li>
+            <li>✅ Responsabilidad limitada: socios responden hasta aporte</li>
+            <li>✅ Costos de constitución menores (8-15 días vs 30-45)</li>
+            <li>✅ Facilita nuevas rondas de inversión sin cambiar estructura</li>
+        </ul>
+
+        <h3>Normatividad Aplicable</h3>
+        <div class="grid">
+            <div class="card">
+                <h3>🔒 Ley 1581/2012</h3>
+                <p><strong>Protección de Datos Personales</strong></p>
+                <p style="font-size: 0.9rem;">Política de privacidad, encriptación, sistemas seguridad ISO 27001. Sanciones hasta COP $1.000.000.000.</p>
+            </div>
+            <div class="card">
+                <h3>🛒 Ley 527/1999</h3>
+                <p><strong>Comercio Electrónico</strong></p>
+                <p style="font-size: 0.9rem;">Documentos digitales válidos, firmas electrónicas, privacidad transacciones. Multa COP $500.000.000.</p>
+            </div>
+            <div class="card">
+                <h3>👥 Ley 1480/2011</h3>
+                <p><strong>Código del Consumidor</strong></p>
+                <p style="font-size: 0.9rem;">Protección derechos consumidor, garantías, derecho retracto. Multa COP $2.000.000.000.</p>
+            </div>
+            <div class="card">
+                <h3>🚗 Decreto 1502/2020</h3>
+                <p><strong>Regulación Plataformas Transporte</strong></p>
+                <p style="font-size: 0.9rem;">Verificación conductores, seguro obligatorio COP $500.000.000, reportes DANE.</p>
+            </div>
+            <div class="card">
+                <h3>📋 Resolución 2516/2015</h3>
+                <p><strong>Seguridad Vial</strong></p>
+                <p style="font-size: 0.9rem;">Conductores licencia profesional, vehículos tecnomecánica. Multa COP $100.000.000.</p>
+            </div>
+            <div class="card">
+                <h3>🏢 ISO 27001</h3>
+                <p><strong>Seguridad Información</strong></p>
+                <p style="font-size: 0.9rem;">Certificación ISMS, confianza usuarios, acceso crédito bancario.</p>
+            </div>
+        </div>
+
+        <h3>Constitución SAS - Proceso 3-4 Semanas</h3>
+        <ol>
+            <li><strong>Semana 1:</strong> Accionistas, aportes, porcentaje, documento constitutivo, RNC</li>
+            <li><strong>Semana 2:</strong> Registro Cámara de Comercio + Registro DIAN (RUT)</li>
+            <li><strong>Semana 3:</strong> Afiliación Seguridad Social (EPS, ARL, AFP)</li>
+            <li><strong>Semana 3-4:</strong> Apertura cuenta bancaria + tarjeta corporativa</li>
+        </ol>
+        
+        <p><strong>Costo Total Constitución: COP $1.700.000</strong></p>
+    </section>
+
+    <!-- CONTACTO Y CIERRE -->
+    <section id="contacto" class="alt">
+        <h2>📞 Contacto y Datos Académicos</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>🎓 Institución</h3>
+                <p><strong>Universitaria de Colombia</strong></p>
+                <p>Programa: Contaduría Pública</p>
+                <p>Semestre: Primero - 2026</p>
+                <p>Asignatura: Creación y Desarrollo de Empresas</p>
+            </div>
+            <div class="card">
+                <h3>👥 Autores del Proyecto</h3>
+                <ul style="margin: 0; font-size: 0.9rem;">
+                    <li>Karen Dayana Pérez Bernal</li>
+                    <li>Luna María Neuta Carpeta</li>
+                    <li>Heidy Andrea Morales Muñoz</li>
+                    <li>Karen Dayana Vanegas Gutiérrez</li>
+                    <li>Nicolás Esteban Salamanca Rivas</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>📧 Contacto KALUN</h3>
+                <p><strong>Email:</strong> info@kalun.co</p>
+                <p><strong>Ubicación:</strong> Usaquén, Bogotá</p>
+                <p><strong>Teléfono:</strong> +57 (1) 123-4567</p>
+                <p><strong>Web:</strong> www.kalun.com.co</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>🚀 KALUN TECHNOLOGIES</h3>
+        <p>Plataforma Inteligente de Movilidad Urbana en Tiempo Real</p>
+        <hr style="border: 1px solid rgba(0, 240, 255, 0.2); margin: 2rem 0;">
+        <p><strong>Universidad:</strong> Universitaria de Colombia | <strong>Programa:</strong> Contaduría Pública | <strong>Semestre:</strong> 1 - 2026</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Karen Dayana Pérez Bernal | Luna María Neuta Carpeta | Heidy Andrea Morales Muñoz | Karen Dayana Vanegas Gutiérrez | Nicolás Esteban Salamanca Rivas</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">© 2026 KALUN Startup | Todos los derechos reservados | Plan de Negocio Completo</p>
+    </footer>
+
+</body>
+</html>

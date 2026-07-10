@@ -1,0 +1,1 @@
+1. No crear archivos .md o .txt a menos de ser solicitados.
