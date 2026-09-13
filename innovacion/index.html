@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alibaba Group: Innovación y Éxito Empresarial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #D946A6;
+            --secondary-color: #6B4C7A;
+            --accent-color: #A78BCC;
+            --light-bg: #FAF5F9;
+            --dark-text: #4A3D54;
+            --light-text: #7A6F84;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: #fff;
+        }
+
+        /* Menú de navegación sticky */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(107, 76, 122, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(217, 70, 166, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #D946A6;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #D946A6;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #D946A6;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6B4C7A 0%, #A78BCC 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffb5eee3;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)" /></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero .info {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero .info strong {
+            color: #fff;
+        }
+
+        .btn-explore {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #D946A6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            box-shadow: 0 5px 20px rgba(217, 70, 166, 0.3);
+        }
+
+        .btn-explore:hover {
+            background: #c5248e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(217, 70, 166, 0.4);
+        }
+
+        /* Secciones */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(217, 70, 166, 0.08);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(217, 70, 166, 0.15);
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        /* Sección ¿Quién es Alibaba? */
+        /* Sección de Historia */
+        #historia {
+            position: relative;
+            padding: 0;
+            background: none;
+        }
+
+        #historia h2 {
+            position: relative;
+            z-index: 10;
+            padding: 3rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(107, 76, 122, 0.95) 0%, rgba(167, 139, 204, 0.9) 100%);
+            margin: 0;
+            border-radius: 0;
+            color: #fff;
+        }
+
+        #historia h2::after {
+            background: #D946A6;
+        }
+
+        .alibaba-info .intro-text {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .business-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Founders Section */
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .founder-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(217, 70, 166, 0.08);
+            transition: var(--transition);
+        }
+
+        .founder-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(217, 70, 166, 0.15);
+        }
+
+        .founder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+        }
+
+        .founder-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-card .role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            background-image: url('https://media-bitfinanzas-com.s3.amazonaws.com/wp-content/uploads/2024/05/Alibaba-TechinAsia-Moovstock-scaled.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            transition: background-image 0.8s ease-in-out;
+            padding: 0;
+            border-radius: 0;
+            overflow: visible;
+            box-shadow: none;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.5) 0%, rgba(40, 20, 50, 0.5) 100%);
+            z-index: 1;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            z-index: 2;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            width: 45%;
+            animation: fadeInUp 0.6s ease-out;
+            position: relative;
+            z-index: 3;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 55%;
+            text-align: left;
+            padding-left: 3rem;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .timeline-content img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 0 1rem 0;
+            border-radius: 8px;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #D946A6;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95rem;
+        }
+
+        .timeline-content img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Efectos de hover en imágenes */
+        .timeline-content img {
+            transition: var(--transition);
+            filter: brightness(1);
+            display: block;
+        }
+
+        .timeline-item:hover .timeline-content img {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .founder-image {
+            transition: var(--transition);
+            filter: brightness(1);
+        }
+
+        .founder-card:hover .founder-image {
+            filter: brightness(1.1);
+            transform: scale(1.05);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border: 4px solid #fff;
+            border-radius: 50%;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+
+        /* Sección de Innovación */
+        .innovation {
+            background: var(--light-bg);
+        }
+
+        .innovation-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .innovation-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(217, 70, 166, 0.08);
+            transition: var(--transition);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .innovation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(217, 70, 166, 0.15);
+        }
+
+        .innovation-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Success Factors */
+        .success-factors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .factor-card {
+            background: linear-gradient(135deg, #6B4C7A 0%, #A78BCC 100%);
+            color: #fff;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(217, 70, 166, 0.15);
+            transition: var(--transition);
+        }
+
+        .factor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(217, 70, 166, 0.25);
+        }
+
+        .factor-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .factor-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Accounting Section */
+        .accounting {
+            background: #fff;
+        }
+
+        .accounting-intro {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .accounting-intro p {
+            font-size: 1.05rem;
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+
+        .accounting-roles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Learning Section */
+        .lessons {
+            background: var(--light-bg);
+        }
+
+        .lessons-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .lesson-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(217, 70, 166, 0.08);
+            border-top: 4px solid var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(217, 70, 166, 0.15);
+        }
+
+        .lesson-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Elementos decorativos femeninos */
+        section h2 {
+            position: relative;
+        }
+
+        section {
+            position: relative;
+        }
+
+        /* Decoraciones sutiles */
+        .alibaba-info::before {
+            content: '✨';
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 2rem;
+            opacity: 0.15;
+        }
+
+        .innovation::before {
+            content: '💫';
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            opacity: 0.15;
+        }
+
+        .lessons::before {
+            content: '🌸';
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 2rem;
+            opacity: 0.15;
+        }
+
+        .conclusions::before {
+            content: '✨';
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            opacity: 0.15;
+        }
+
+        .members::before {
+            content: '💖';
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 2rem;
+            opacity: 0.15;
+        }
+
+        /* Conclusions */
+        .conclusions {
+            background: #fff;
+        }
+
+        .conclusions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .conclusion-card {
+            background: linear-gradient(135deg, #D946A6 0%, #A78BCC 100%);
+            color: #fff;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(217, 70, 166, 0.2);
+            transition: var(--transition);
+        }
+
+        .conclusion-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(217, 70, 166, 0.3);
+        }
+
+        .conclusion-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Members Section */
+        .members {
+            background: var(--light-bg);
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .member-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(217, 70, 166, 0.08);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(217, 70, 166, 0.15);
+        }
+
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .teacher-info {
+            background: linear-gradient(135deg, #6B4C7A 0%, #A78BCC 100%);
+            color: #fff;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Sources */
+        .sources {
+            background: #fff;
+        }
+
+        .sources-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .sources-list li {
+            padding: 1rem;
+            background: var(--light-bg);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Botón flotante */
+        .btn-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(217, 70, 166, 0.3);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 500;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .btn-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .btn-top:hover {
+            background: #c5248e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(217, 70, 166, 0.4);
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 78, 137, 0.98);
+                gap: 1rem;
+                padding: 2rem;
+                list-style: none;
+            }
+
+            .nav-links.active a {
+                display: block;
+                padding: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.3rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                width: 100%;
+                margin-left: 0 !important;
+                padding-left: 3rem !important;
+                text-align: left !important;
+                padding-right: 0 !important;
+            }
+
+            .timeline-dot {
+                left: -10px;
+                transform: translateX(0);
+            }
+
+            .btn-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+
+            #historia h2 {
+                padding: 2rem 1rem;
+            }
+
+            .timeline {
+                min-height: 60vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero .info {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">Alibaba Group</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quien-es">¿Quién es Alibaba?</a></li>
+                <li><a href="#fundadores">Fundadores</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#innovacion">Innovación</a></li>
+                <li><a href="#exito">Éxito</a></li>
+                <li><a href="#contabilidad">Contaduría Pública</a></li>
+                <li><a href="#conclusiones">Conclusiones</a></li>
+                <li><a href="#fuentes">Fuentes</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>ALIBABA GROUP</h1>
+            <p class="subtitle">Innovación y Éxito Empresarial</p>
+            
+            <div class="info">
+                <p><strong>Institución Universitaria de Colombia</strong></p>
+                <p><strong>Programa:</strong> Contaduría Pública – Segundo semestre</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Integrantes:</strong><br>
+                    Karen Dayana Pérez Bernal<br>
+                    Karen Dayana Vanegas Gutiérrez<br>
+                    Luna María Neuta Carpeta
+                </p>
+                <p style="margin-top: 1rem;"><strong>Docente:</strong> Jessica Eastman Soto</p>
+                <p><strong>Año:</strong> 2026</p>
+            </div>
+            
+            <button class="btn-explore" onclick="document.getElementById('quien-es').scrollIntoView({behavior: 'smooth'})">
+                Explorar investigación ↓
+            </button>
+        </div>
+    </section>
+
+    <!-- ¿QUIÉN ES ALIBABA? -->
+    <section id="quien-es" class="alibaba-info">
+        <h2>¿Quién es Alibaba?</h2>
+        
+        <div class="intro-text">
+            <p>
+                <strong>Alibaba Group Holding Limited</strong> es un conglomerado tecnológico y empresarial multinacional 
+                fundado en <strong>1999 en Hangzhou, China</strong>. Es una de las empresas más innovadoras del mundo en los 
+                sectores de comercio electrónico, tecnología, servicios financieros e infraestructura digital.
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3>Origen</h3>
+                <p>Fundada en China, con presencia global en más de 200 países y regiones, revolucionando el comercio electrónico a nivel mundial.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛒</div>
+                <h3>Comercio Electrónico</h3>
+                <p>Plataformas como Taobao y Tmall conectan millones de vendedores y compradores, generando millardos en transacciones.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">☁️</div>
+                <h3>Computación en la Nube</h3>
+                <p>Alibaba Cloud proporciona servicios de infraestructura digital a empresas globales y es uno de los líderes del mercado.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚚</div>
+                <h3>Logística</h3>
+                <p>Cainiao, su red logística, optimiza la distribución y entrega de productos a nivel mundial.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💳</div>
+                <h3>Servicios Financieros</h3>
+                <p>Ant Group proporciona servicios de pago digital, billetera electrónica y crédito digital.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>Inteligencia Artificial</h3>
+                <p>Alibaba invierte continuamente en IA, análisis de datos y tecnologías emergentes para mejorar sus servicios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FUNDADORES -->
+    <section id="fundadores">
+        <h2>Fundadores de Alibaba</h2>
+        
+        <div class="founders-grid">
+            <div class="founder-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/20th_Anniversary_Schwab_Foundation_Gala_Dinner_%2844887783681%29.jpg" alt="Jack Ma" class="founder-image">
+                <h3>Jack Ma</h3>
+                <div class="role">Fundador y Presidente Ejecutivo (1999-2019)</div>
+                <p>
+                    <strong>Jack Ma Yun</strong> nació en 1964 en Hangzhou, China. Era profesor de inglés cuando vio el potencial 
+                    de Internet. En 1999, fundó Alibaba con la visión de crear una plataforma que conectara pequeñas empresas 
+                    chinas con compradores globales. Su liderazgo y visión transformaron a Alibaba en un gigante tecnológico 
+                    global. Se retiró como presidente ejecutivo en 2019 para enfocarse en educación y filantropía.
+                </p>
+            </div>
+            
+            <div class="founder-card">
+                <img src="https://d3nqciqdbtzkc.cloudfront.net/articulos/articulos-69125.jpg" alt="Joseph Tsai" class="founder-image">
+                <h3>Joseph Tsai</h3>
+                <div class="role">Socio Fundador y Vicepresidente</div>
+                <p>
+                    <strong>Joseph Tsai</strong> es un empresario y ejecutivo taiwanés que se unió a Alibaba en sus primeros años. 
+                    Jugó un papel crucial en la estrategia empresarial y en la expansión internacional de Alibaba. Trabajó 
+                    estrechamente con Jack Ma en el desarrollo y crecimiento del grupo empresarial.
+                </p>
+            </div>
+
+            <div class="founder-card">
+                <img src="https://images.ecestaticos.com/C9mEWuiofUzAv9yvGvZm6VejiNg=/0x0:2272x1446/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F88f%2Fd01%2F751%2F88fd01751641237ed3469a46e8facb59.jpg" alt="17 Fundadores de Alibaba" class="founder-image">
+                <h3>El Equipo Fundador</h3>
+                <div class="role">18 Fundadores Originales</div>
+                <p>
+                    Junto con Jack Ma, había otros <strong>17 fundadores originales</strong> en 1999 que formaron parte del 
+                    equipo inicial de Alibaba. Este equipo multidisciplinario fue fundamental en los primeros años para construir 
+                    la plataforma y establecer la cultura empresarial de Alibaba.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORIA Y LÍNEA DE TIEMPO -->
+    <section id="historia">
+        <h2>Historia de Alibaba</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://media-bitfinanzas-com.s3.amazonaws.com/wp-content/uploads/2024/05/Alibaba-TechinAsia-Moovstock-scaled.jpg" alt="Fundación de Alibaba" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">1999</div>
+                    <div class="timeline-title">Fundación de Alibaba.com</div>
+                    <div class="timeline-description">Jack Ma y 17 cofundadores crean Alibaba.com con el objetivo de conectar pequeñas y medianas empresas chinas con compradores internacionales. La plataforma B2B (Business to Business) revoluciona el comercio internacional.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1KPDbeyVk-8zVFylRMDlTZYWZtqOZvIXG6R-cNRDj1Blaz_vVtAu-O5k&s=10" alt="Lanzamiento de Taobao" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">2003</div>
+                    <div class="timeline-title">Lanzamiento de Taobao</div>
+                    <div class="timeline-description">Se lanza Taobao, una plataforma de comercio electrónico C2C (Consumer to Consumer), que posteriormente se convierte en la plataforma de e-commerce más grande de Asia, permitiendo a vendedores individuales y pequeños negocios vender directamente a consumidores.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://www.shutterstock.com/shutterstock/photos/703262551/display_1500/stock-photo-milan-italy-august-tmall-website-it-formerly-taobao-mall-is-a-chinese-website-for-703262551.jpg" alt="Lanzamiento de Tmall" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-title">Lanzamiento de Tmall</div>
+                    <div class="timeline-description">Se crea Tmall como una plataforma B2C (Business to Consumer) para marcas y comerciantes establecidos. Tmall se convierte en un importante canal de distribución para marcas globales en China.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://elceo.com/wp-content/uploads/2025/02/alibaba_nube_mexico_lanzamiento.jpg" alt="Alibaba Cloud" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">2009</div>
+                    <div class="timeline-title">Fundación de Alibaba Cloud</div>
+                    <div class="timeline-description">Alibaba Group establece Alibaba Cloud (Aliyun) para proporcionar servicios de computación en la nube, almacenamiento y análisis de datos. Esta división se convierte en un actor clave en la infraestructura digital global.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://es.marketingtochina.com/wp-content/uploads/2022/11/1-12.jpg" alt="Alipay" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-title">Creación de Alipay</div>
+                    <div class="timeline-description">Se formaliza Alipay como un servicio de pago digital independiente. Posteriormente evoluciona hacia Ant Group, proporcionando servicios financieros digitales, billetera electrónica y microcréditos.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://img.magnific.com/foto-gratis/empresario-presiona-boton-ipo-oferta-publica-inicial-telefono-grafico_493343-29967.jpg?semt=ais_hybrid&w=740&q=80" alt="IPO" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-title">Mayor Oferta Pública Inicial (IPO)</div>
+                    <div class="timeline-description">Alibaba se convierte en la empresa con la mayor oferta pública inicial de la historia, recaudando $25 mil millones en la Bolsa de Valores de Nueva York. Este evento marca su consolidación como gigante global.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://play-lh.googleusercontent.com/tledgIpQoZIDbcIsta7DD4SOE5C23stH0tNNW3bC4CYjlGuw4ZvEFFKn070CP3EQWFY83P1_BtFBAHJOJMIwXA=w480-h960-rw" alt="Cainiao" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-title">Creación de Cainiao</div>
+                    <div class="timeline-description">Se establece Cainiao Network Technology, la red logística y de distribución de Alibaba, optimizando la entrega de productos y mejorando la experiencia del cliente en el comercio electrónico.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://www.lavanguardia.com/files/image_449_220/files/fp/uploads/2024/11/07/672ccbd8b630b.r_d.683-384-3289.jpeg" alt="Singles Day" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-title">Día de Compra Online (11.11)</div>
+                    <div class="timeline-description">El evento de compra "11.11 Single's Day" de Alibaba bate récords globales, demostrando el poder del comercio electrónico y la plataforma Alibaba en la generación de transacciones comerciales.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://marketing4ecommerce.co/wp-content/uploads/2018/09/Adi%C3%B3s_Jack_Ma_marketing_4.jpg" alt="Jack Ma Retiro" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-title">Retiro de Jack Ma</div>
+                    <div class="timeline-description">Jack Ma se retira como presidente ejecutivo y presidente de Alibaba para dedicarse a actividades de filantropía y educación. Daniel Zhang asume como nuevo presidente ejecutivo.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <img src="https://www.parentesis.media/wp-content/uploads/2025/09/ChatGPT-Image-Sep-19-2025-10_30_49-AM.jpg" alt="Transformación Digital" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                    <div class="timeline-year">2020+</div>
+                    <div class="timeline-title">Expansión y Transformación Digital</div>
+                    <div class="timeline-description">Alibaba continúa expandiendo sus servicios de nube, IA, IoT y comercio electrónico. Se enfoca en transformación digital, comercio directo en vivo (livestream commerce) y servicios internacionales.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INNOVACIÓN -->
+    <section id="innovacion" class="innovation">
+        <h2>¿Qué Tipo de Innovación tiene Alibaba?</h2>
+        
+        <div class="innovation-types">
+            <div class="innovation-card">
+                <div class="card-icon">💻</div>
+                <h3>Innovación Tecnológica</h3>
+                <p>
+                    <strong>Ejemplo:</strong> Alibaba desarrolla sistemas avanzados de análisis de datos, inteligencia artificial 
+                    y algoritmos de recomendación para personalizar la experiencia del usuario.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema que soluciona:</strong> Mejorar la búsqueda y recomendación de productos relevantes para cada usuario.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Mayor satisfacción del cliente y aumento de ventas.
+                </p>
+            </div>
+
+            <div class="innovation-card">
+                <div class="card-icon">🔄</div>
+                <h3>Innovación de Procesos</h3>
+                <p>
+                    <strong>Ejemplo:</strong> Automatización de sistemas de pago, logística y atención al cliente mediante tecnología.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema que soluciona:</strong> Acelerar transacciones y reducir tiempos de entrega.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Eficiencia operativa y mejor experiencia del cliente.
+                </p>
+            </div>
+
+            <div class="innovation-card">
+                <div class="card-icon">🛒</div>
+                <h3>Innovación en el Modelo de Negocio</h3>
+                <p>
+                    <strong>Ejemplo:</strong> Crear plataformas que conectan directamente vendedores con compradores sin inventario propio.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema que soluciona:</strong> Permitir que pequeños negocios accedan a mercados globales.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Bajo costo operativo y acceso democratizado al comercio global.
+                </p>
+            </div>
+
+            <div class="innovation-card">
+                <div class="card-icon">☁️</div>
+                <h3>Innovación en Servicios Digitales</h3>
+                <p>
+                    <strong>Ejemplo:</strong> Alibaba Cloud ofrece infraestructura digital escalable para empresas de cualquier tamaño.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema que soluciona:</strong> Permitir que empresas pequeñas accedan a tecnología de clase empresarial.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Democratización de acceso a tecnología avanzada.
+                </p>
+            </div>
+
+            <div class="innovation-card">
+                <div class="card-icon">🚚</div>
+                <h3>Innovación Logística</h3>
+                <p>
+                    <strong>Ejemplo:</strong> Cainiao utiliza IA, robótica y análisis de datos para optimizar rutas de entrega.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema que soluciona:</strong> Reducir tiempos de entrega y costos de distribución.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Entregas más rápidas y eficientes.
+                </p>
+            </div>
+
+            <div class="innovation-card">
+                <div class="card-icon">🤖</div>
+                <h3>Inteligencia Artificial</h3>
+                <p>
+                    <strong>Ejemplo:</strong> Alibaba desarrolla modelos de IA para reconocimiento de imágenes, chatbots y análisis predictivo.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema que soluciona:</strong> Automatizar procesos y proporcionar servicio al cliente 24/7.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Reducción de costos y mejor servicio.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRINCIPALES INNOVACIONES -->
+    <section>
+        <h2>Principales Innovaciones que Impulsaron a Alibaba</h2>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Mobile Commerce (M-commerce)</h3>
+                <p>
+                    <strong>Innovación:</strong> Alibaba revolucionó el comercio electrónico móvil, permitiendo compras desde dispositivos móviles de manera segura y rápida.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema resuelto:</strong> Permitir que usuarios compren desde cualquier lugar y momento.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Aumento exponencial de transacciones y acceso a nuevas audiencias.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💳</div>
+                <h3>Sistemas de Pago Digital</h3>
+                <p>
+                    <strong>Innovación:</strong> Alipay revolucionó los pagos digitales en China, proporcionando un método seguro sin usar tarjetas de crédito tradicionales.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema resuelto:</strong> Falta de confianza en transacciones online y bajo acceso a tarjetas de crédito.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Millones de usuarios pueden comprar online de forma segura.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏪</div>
+                <h3>Marketplace Model</h3>
+                <p>
+                    <strong>Innovación:</strong> Crear plataformas donde vendedores terceros ofrecen productos, sin que Alibaba sea propietaria del inventario.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema resuelto:</strong> Escalabilidad limitada del modelo de inventario tradicional.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Modelo altamente escalable con bajo costo operativo.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">☁️</div>
+                <h3>Cloud Computing</h3>
+                <p>
+                    <strong>Innovación:</strong> Alibaba Cloud proporciona infraestructura digital accesible que permiten a otras empresas construir negocios digitales.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema resuelto:</strong> Costo prohibitivo de infraestructura de tecnología para pequeñas empresas.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Democratización de acceso a tecnología empresarial.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Data-Driven Decision Making</h3>
+                <p>
+                    <strong>Innovación:</strong> Alibaba utiliza análisis de datos masivos (Big Data) para tomar decisiones empresariales inteligentes.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Problema resuelto:</strong> Falta de información confiable para decisiones estratégicas.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Beneficio:</strong> Mayor eficiencia y rentabilidad en operaciones.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿POR QUÉ ALIBABA ES EXITOSA? -->
+    <section id="exito">
+        <h2>¿Por Qué Creemos que Alibaba es Exitosa?</h2>
+        
+        <div class="success-factors">
+            <div class="factor-card">
+                <h3>1. Innovación Constante</h3>
+                <p>
+                    Alibaba invierte significativamente en investigación y desarrollo, creando nuevas tecnologías y mejorando continuamente 
+                    sus servicios. Esta mentalidad de innovación permanente la mantiene competitiva en un mercado global dinámico.
+                </p>
+            </div>
+
+            <div class="factor-card">
+                <h3>2. Uso Estratégico de la Tecnología</h3>
+                <p>
+                    La empresa implementa inteligencia artificial, análisis de datos y automatización en todos sus procesos, 
+                    desde atención al cliente hasta logística, mejorando eficiencia y reduciendo costos.
+                </p>
+            </div>
+
+            <div class="factor-card">
+                <h3>3. Adaptación al Mercado</h3>
+                <p>
+                    Alibaba entiende las necesidades locales de sus mercados y adapta sus servicios en consecuencia. 
+                    Comenzó conectando pequeños negocios chinos con compradores globales, luego se adaptó a nuevos sectores.
+                </p>
+            </div>
+
+            <div class="factor-card">
+                <h3>4. Diversificación Estratégica</h3>
+                <p>
+                    No se concentra en un único negocio. Tiene comercio electrónico, computación en la nube, servicios financieros, 
+                    logística e inteligencia artificial, reduciendo riesgos y maximizando oportunidades de crecimiento.
+                </p>
+            </div>
+
+            <div class="factor-card">
+                <h3>5. Creación de un Ecosistema Empresarial</h3>
+                <p>
+                    Alibaba no solo ofrece plataformas de venta, sino un ecosistema completo: logística, pagos, 
+                    análisis de datos y tecnología. Esto crea valor adicional para todos sus usuarios.
+                </p>
+            </div>
+
+            <div class="factor-card">
+                <h3>6. Capacidad de Crecimiento Global</h3>
+                <p>
+                    A pesar de originarse en China, Alibaba ha expandido exitosamente sus servicios a múltiples países 
+                    y regiones, demostrando capacidad de adaptarse a diferentes contextos culturales y económicos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALIBABA Y CONTADURÍA PÚBLICA -->
+    <section id="contabilidad" class="accounting">
+        <h2>¿Qué Tiene que Ver Alibaba con la Contaduría Pública?</h2>
+        
+        <div class="accounting-intro">
+            <p>
+                Una empresa de la magnitud y complejidad de Alibaba Group requiere un equipo robusto de profesionales en contaduría 
+                y finanzas para controlar sus recursos, evaluar resultados, administrar riesgos y tomar decisiones estratégicas. 
+                Los contadores públicos juegan un papel fundamental en el funcionamiento y crecimiento de empresas multinacionales como Alibaba.
+            </p>
+        </div>
+
+        <h3 style="text-align: center; color: var(--secondary-color); margin-top: 2rem;">Funciones Contables en Empresas Como Alibaba</h3>
+
+        <div class="accounting-roles">
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Análisis Financiero</h3>
+                <p>Analizar estados financieros para evaluar la salud económica de la empresa y sus divisiones.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <h3>Control de Costos</h3>
+                <p>Controlar y optimizar los costos operativos en todas las áreas del negocio.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h3>Presupuestos</h3>
+                <p>Elaborar presupuestos para planeación financiera y asignación de recursos.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h3>Auditoría</h3>
+                <p>Realizar auditorías internas y externas para verificar la integridad de registros financieros.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>Control Interno</h3>
+                <p>Establecer sistemas de control interno para prevenir fraudes y garantizar cumplimiento normativo.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚖️</div>
+                <h3>Gestión Tributaria</h3>
+                <p>Planificar estrategias tributarias y cumplir con obligaciones fiscales en múltiples jurisdicciones.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3>Análisis de Rentabilidad</h3>
+                <p>Evaluar la rentabilidad de diferentes líneas de negocio e inversiones.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚠️</div>
+                <h3>Gestión de Riesgos</h3>
+                <p>Identificar y mitigar riesgos financieros, operacionales y de mercado.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💼</div>
+                <h3>Toma de Decisiones</h3>
+                <p>Proporcionar información financiera confiable para que ejecutivos tomen decisiones estratégicas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LECCIONES APRENDIDAS -->
+    <section id="lecciones" class="lessons">
+        <h2>¿Qué Aprendemos de Alibaba?</h2>
+        <p style="text-align: center; font-size: 1.05rem; color: var(--light-text); max-width: 800px; margin: 0 auto 3rem;">
+            Lecciones para futuros contadores públicos y profesionales de negocios
+        </p>
+
+        <div class="lessons-list">
+            <div class="lesson-card">
+                <h3>1. La Importancia de la Innovación</h3>
+                <p>
+                    La historia de Alibaba demuestra que la innovación constante es clave para mantenerse competitivo. 
+                    Como contadores, debemos estar abiertos a nuevas herramientas, metodologías y formas de analizar datos 
+                    financieros. La tecnología contable y los sistemas de información financiera evolucionan constantemente.
+                </p>
+            </div>
+
+            <div class="lesson-card">
+                <h3>2. Adaptarse a los Cambios Tecnológicos</h3>
+                <p>
+                    La transformación digital es inevitable. Los contadores del futuro deben dominar sistemas ERP, 
+                    análisis de big data, IA para auditoría y blockchain para contabilidad. Alibaba nos muestra que adaptarse 
+                    a tecnología es clave para el éxito.
+                </p>
+            </div>
+
+            <div class="lesson-card">
+                <h3>3. La Importancia de la Información Confiable</h3>
+                <p>
+                    Alibaba toma decisiones basadas en datos. Los contadores somos responsables de que esa información sea 
+                    confiable, precisa y oportuna. Sin contabilidad rigurosa, no hay datos confiables para decisiones.
+                </p>
+            </div>
+
+            <div class="lesson-card">
+                <h3>4. Comprender el Funcionamiento de las Empresas</h3>
+                <p>
+                    Alibaba existe en múltiples negocios (e-commerce, cloud, fintech, logística). Como contadores, debemos 
+                    entender cómo funcionan diferentes tipos de negocios, sus modelos de ingresos y cómo medirlos financieramente.
+                </p>
+            </div>
+
+            <div class="lesson-card">
+                <h3>5. La Profesión Contable es Estratégica</h3>
+                <p>
+                    No somos solo registradores de números. Como en Alibaba, los contadores somos socios estratégicos 
+                    que proporcionamos información para que la empresa crezca, se expanda y tome decisiones correctas. 
+                    Nuestra profesión es fundamental para el éxito empresarial.
+                </p>
+            </div>
+
+            <div class="lesson-card">
+                <h3>6. Integridad y Transparencia</h3>
+                <p>
+                    Una empresa global como Alibaba debe cumplir con normas contables y regulaciones de múltiples países. 
+                    Los contadores somos guardianes de la integridad financiera y la transparencia, fundamental para mantener 
+                    la confianza de inversionistas, clientes y autoridades.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONCLUSIONES -->
+    <section id="conclusiones" class="conclusions">
+        <h2>Conclusiones</h2>
+        
+        <div class="conclusions-grid">
+            <div class="conclusion-card">
+                <h3>Alibaba: De Pequeña Empresa a Gigante Global</h3>
+                <p>
+                    Alibaba Group es un ejemplo extraordinario de cómo una empresa pequeña puede convertirse en un líder 
+                    global mediante innovación constante, adaptación al mercado y visión de largo plazo. Comenzó en 1999 
+                    como una plataforma para conectar pequeñas empresas chinas con compradores globales y hoy es un 
+                    conglomerado tecnológico que opera en múltiples sectores.
+                </p>
+            </div>
+
+            <div class="conclusion-card">
+                <h3>La Innovación como Factor Crítico de Éxito</h3>
+                <p>
+                    El éxito de Alibaba no es accidental. Es resultado de innovación continua en tecnología, procesos y 
+                    modelos de negocio. Desde el pago digital hasta la computación en la nube y la inteligencia artificial, 
+                    Alibaba ha demostrado que la innovación es la clave para mantenerse competitivo en un mundo que cambia rápidamente.
+                </p>
+            </div>
+
+            <div class="conclusion-card">
+                <h3>La Contaduría Pública como Columna Vertebral</h3>
+                <p>
+                    Aunque no es evidente en las historias de éxito empresarial, la contaduría pública es fundamental. 
+                    Empresas como Alibaba requieren profesionales contables que aseguren información financiera confiable, 
+                    gestionen riesgos y proporcionen datos para decisiones estratégicas. Como futuros contadores públicos, 
+                    debemos reconocer nuestro rol estratégico.
+                </p>
+            </div>
+
+            <div class="conclusion-card">
+                <h3>El Futuro: Tecnología e Integración</h3>
+                <p>
+                    El futuro de la profesión contable se alinea con la tendencia de Alibaba: automatización, análisis de datos, 
+                    IA e integración digital. Los contadores que dominen estas tecnologías estarán mejor preparados para trabajar 
+                    en empresas globales y contribuir al éxito empresarial como lo hace Alibaba hoy.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEGRANTES -->
+    <section id="integrantes" class="members">
+        <h2>Nuestro Equipo</h2>
+        
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-name">Karen Dayana Pérez Bernal</div>
+                <div class="member-role">Estudiante de Contaduría Pública</div>
+                <p style="margin-top: 1rem; color: var(--light-text);">
+                    Segundo semestre, Institución Universitaria de Colombia
+                </p>
+            </div>
+
+            <div class="member-card">
+                <div class="member-name">Karen Dayana Vanegas Gutiérrez</div>
+                <div class="member-role">Estudiante de Contaduría Pública</div>
+                <p style="margin-top: 1rem; color: var(--light-text);">
+                    Segundo semestre, Institución Universitaria de Colombia
+                </p>
+            </div>
+
+            <div class="member-card">
+                <div class="member-name">Luna María Neuta Carpeta</div>
+                <div class="member-role">Estudiante de Contaduría Pública</div>
+                <p style="margin-top: 1rem; color: var(--light-text);">
+                    Segundo semestre, Institución Universitaria de Colombia
+                </p>
+            </div>
+        </div>
+
+        <div class="teacher-info">
+            <h3>Docente</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Jessica Eastman Soto</p>
+            <p>Institución Universitaria de Colombia – 2026</p>
+        </div>
+    </section>
+
+    <!-- FUENTES -->
+    <section id="fuentes" class="sources">
+        <h2>Fuentes y Referencias</h2>
+        <p style="text-align: center; font-size: 1.05rem; color: var(--light-text); margin-bottom: 2rem;">
+            Normas APA 7.ª edición
+        </p>
+
+        <ul class="sources-list">
+            <li>
+                <strong>Alibaba Group.</strong> (2024). Investor Relations. Recuperado de: www.alibabagroup.com/en/ir/home
+            </li>
+            <li>
+                <strong>Alibaba Group.</strong> (2024). Annual Report 2023. Recuperado de: www.alibabagroup.com/en/ir/reports
+            </li>
+            <li>
+                <strong>Ma, J., & Crovella, M.</strong> (2015). *Alibaba's World: How a Remarkable Chinese Company is Changing the Face of Global Business*. Picador.
+            </li>
+            <li>
+                <strong>Statista.</strong> (2024). Alibaba Group - Statistics & Facts. Recuperado de: www.statista.com/topics/2142/alibaba/
+            </li>
+            <li>
+                <strong>Crunchbase.</strong> (2024). Alibaba Group Company Profile. Recuperado de: www.crunchbase.com/organization/alibaba-group
+            </li>
+            <li>
+                <strong>Fortune.</strong> (2023). Alibaba: How Jack Ma Built One of the World's Largest E-Commerce Companies. Recuperado de: fortune.com
+            </li>
+            <li>
+                <strong>Bloomberg.</strong> (2024). Alibaba Company Information. Recuperado de: www.bloomberg.com/quote/BABA:US
+            </li>
+            <li>
+                <strong>McKinsey & Company.</strong> (2023). The Future of E-Commerce: Lessons from Alibaba. Recuperado de: www.mckinsey.com
+            </li>
+            <li>
+                <strong>Investopedia.</strong> (2024). Alibaba Group - History and Business Model. Recuperado de: www.investopedia.com
+            </li>
+            <li>
+                <strong>TechCrunch.</strong> (2024). Alibaba Cloud - Enterprise Technology Solutions. Recuperado de: techcrunch.com
+            </li>
+            <li>
+                <strong>Financial Times.</strong> (2023). Alibaba's Strategy in Global Markets. Recuperado de: www.ft.com
+            </li>
+            <li>
+                <strong>Reuters.</strong> (2024). Alibaba Group Latest News and Updates. Recuperado de: www.reuters.com/technology/alibaba/
+            </li>
+        </ul>
+    </section>
+
+    <!-- Botón flotante "Volver arriba" -->
+    <div class="btn-top" id="btnTop">↑</div>
+
+    <script>
+        // Menú hamburguesa
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Botón "Volver arriba"
+        const btnTop = document.getElementById('btnTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btnTop.classList.add('show');
+            } else {
+                btnTop.classList.remove('show');
+            }
+        });
+
+        // Cambiar fondo de la línea de tiempo según scroll
+        const timelineSection = document.getElementById('historia');
+        const timelineImages = [
+            'https://media-bitfinanzas-com.s3.amazonaws.com/wp-content/uploads/2024/05/Alibaba-TechinAsia-Moovstock-scaled.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1KPDbeyVk-8zVFylRMDlTZYWZtqOZvIXG6R-cNRDj1Blaz_vVtAu-O5k&s=10',
+            'https://www.shutterstock.com/shutterstock/photos/703262551/display_1500/stock-photo-milan-italy-august-tmall-website-it-formerly-taobao-mall-is-a-chinese-website-for-703262551.jpg',
+            'https://elceo.com/wp-content/uploads/2025/02/alibaba_nube_mexico_lanzamiento.jpg',
+            'https://es.marketingtochina.com/wp-content/uploads/2022/11/1-12.jpg',
+            'https://img.magnific.com/foto-gratis/empresario-presiona-boton-ipo-oferta-publica-inicial-telefono-grafico_493343-29967.jpg?semt=ais_hybrid&w=740&q=80',
+            'https://play-lh.googleusercontent.com/tledgIpQoZIDbcIsta7DD4SOE5C23stH0tNNW3bC4CYjlGuw4ZvEFFKn070CP3EQWFY83P1_BtFBAHJOJMIwXA=w480-h960-rw',
+            'https://www.lavanguardia.com/files/image_449_220/files/fp/uploads/2024/11/07/672ccbd8b630b.r_d.683-384-3289.jpeg',
+            'https://marketing4ecommerce.co/wp-content/uploads/2018/09/Adi%C3%B3s_Jack_Ma_marketing_4.jpg',
+            'https://www.parentesis.media/wp-content/uploads/2025/09/ChatGPT-Image-Sep-19-2025-10_30_49-AM.jpg'
+        ];
+
+        let currentImageIndex = 0;
+
+        window.addEventListener('scroll', () => {
+            if (timelineSection) {
+                const rect = timelineSection.getBoundingClientRect();
+                const sectionTop = rect.top;
+                const sectionHeight = rect.height;
+                
+                // Calcular qué imagen debe mostrarse según la posición del scroll
+                const scrollPercent = Math.max(0, Math.min(1, (window.innerHeight - sectionTop) / (window.innerHeight + sectionHeight)));
+                const imageIndex = Math.floor(scrollPercent * timelineImages.length);
+                
+                if (imageIndex !== currentImageIndex && imageIndex < timelineImages.length) {
+                    currentImageIndex = imageIndex;
+                    const timeline = timelineSection.querySelector('.timeline');
+                    timeline.style.backgroundImage = `url('${timelineImages[imageIndex]}')`;
+                }
+            }
+        });
+
+        btnTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animaciones al desplazarse
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > *').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
