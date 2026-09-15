@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alibaba Challenge - Juego Educativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #1B1B1B;
+            --accent-color: #FF9500;
+            --light-bg: #FFF7F0;
+            --dark-text: #1B1B1B;
+            --light-text: #5A5A5A;
+            --success: #4CAF50;
+            --error: #F44336;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1B1B1B 0%, #FF6B35 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 3rem;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header-logo-container {
+            display: inline-block;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 149, 0, 0.08) 100%);
+            border-radius: 25px;
+            border: 3px solid rgba(255, 107, 53, 0.4);
+            margin-bottom: 2rem;
+            animation: fadeIn 0.8s ease-out, float 3s ease-in-out infinite;
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.15), inset 0 0 20px rgba(255, 107, 53, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-logo-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .header-alibaba-logo {
+            height: 120px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 20px rgba(255, 107, 53, 0.5));
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-alibaba-logo:hover {
+            transform: scale(1.15) translateY(-8px);
+            filter: drop-shadow(0 12px 30px rgba(255, 107, 53, 0.7));
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 3px 3px 6px rgba(255, 107, 53, 0.25);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            color: var(--light-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Formulario de Registro */
+        .registration-form {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            display: none;
+            border: 2px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .registration-form.show {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 1.05rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-register {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-ver-resultados {
+            width: 100%;
+            padding: 1rem;
+            background: var(--secondary-color);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ver-resultados:hover {
+            background: #000;
+            transform: translateY(-2px);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 10px;
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+        }
+
+        .progress-text {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .question-container {
+            margin-bottom: 2.5rem;
+            animation: slideInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .question-number {
+            color: var(--primary-color);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .question-text {
+            font-size: 1.45rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            line-height: 1.7;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(255, 149, 0, 0.04) 100%);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 12px;
+            animation: fadeIn 0.5s ease-out;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.08);
+        }
+
+        .options {
+            display: grid;
+            gap: 1.2rem;
+        }
+
+        .option-btn {
+            padding: 1.4rem;
+            border: 2px solid #e0e0e0;
+            background: #fff;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: left;
+            font-size: 1.05rem;
+            color: var(--dark-text);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--primary-color);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary-color);
+            background: rgba(255, 107, 53, 0.05);
+            transform: translateX(8px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+        }
+
+        .option-btn:hover::before {
+            transform: scaleY(1);
+        }
+
+        .option-btn.selected {
+            border-color: var(--primary-color);
+            background: rgba(255, 107, 53, 0.12);
+        }
+
+        .option-btn.correct {
+            border-color: var(--success);
+            background: rgba(76, 175, 80, 0.12);
+        }
+
+        .option-btn.correct::before {
+            background: var(--success);
+        }
+
+        .option-btn.incorrect {
+            border-color: var(--error);
+            background: rgba(244, 67, 54, 0.12);
+        }
+
+        .option-btn.incorrect::before {
+            background: var(--error);
+        }
+
+        .feedback {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            display: none;
+            animation: slideDown 0.4s ease-out;
+            border-left: 5px solid;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: rgba(76, 175, 80, 0.12);
+            color: #2e7d32;
+            border-color: var(--success);
+        }
+
+        .feedback.incorrect {
+            background: rgba(244, 67, 54, 0.12);
+            color: #c62828;
+            border-color: var(--error);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: #fff;
+            display: none;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-next.show {
+            display: block;
+            animation: pulse 0.6s ease-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .btn-next:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-restart {
+            background: var(--secondary-color);
+            color: #fff;
+            display: none;
+            box-shadow: 0 5px 15px rgba(27, 27, 27, 0.2);
+        }
+
+        .btn-restart.show {
+            display: block;
+        }
+
+        .btn-restart:hover {
+            background: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(27, 27, 27, 0.3);
+        }
+
+        .results-container {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .results-container.show {
+            display: block;
+        }
+
+        .score-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 3rem;
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.35);
+            animation: bounce 0.8s ease-out;
+            position: relative;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .score-text {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .score-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .results-title {
+            font-size: 2.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .results-text {
+            font-size: 1.15rem;
+            color: var(--light-text);
+            margin-bottom: 3rem;
+            line-height: 1.9;
+            padding: 2rem;
+            background: rgba(255, 107, 53, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+            white-space: pre-line;
+        }
+
+        .achievement {
+            display: inline-block;
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Leaderboard */
+        .leaderboard {
+            display: none;
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: 2px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .leaderboard.show {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .leaderboard h3 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .leaderboard-table th,
+        .leaderboard-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-weight: 600;
+        }
+
+        .leaderboard-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: #fff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .leaderboard-table tr:hover {
+            background: rgba(255, 107, 53, 0.08);
+        }
+
+        /* Animaciones Generales */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .header {
+                margin-bottom: 2rem;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .header-alibaba-logo {
+                height: 100px;
+            }
+
+            .header-logo-container {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .question-text {
+                font-size: 1.2rem;
+                padding: 1.5rem;
+            }
+
+            .score-circle {
+                width: 140px;
+                height: 140px;
+            }
+
+            .score-text {
+                font-size: 2.8rem;
+            }
+
+            .results-title {
+                font-size: 1.8rem;
+            }
+
+            .achievement {
+                font-size: 3.5rem;
+            }
+
+            .leaderboard-table th,
+            .leaderboard-table td {
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-logo-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4_v0UEI6Vf67Mf1sHugp3ZLflobzLrk-ymuwwY0uwkTQWWRM5uwEWsaJ_&s=10" alt="Logo Alibaba" class="header-alibaba-logo">
+            </div>
+            <h1>🚀 Alibaba Challenge</h1>
+            <p>¡Demuestra tu conocimiento sobre Alibaba!</p>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div class="registration-form" id="registrationForm">
+            <h3 style="margin-bottom: 2rem; color: var(--secondary-color); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px;">Regístrate para jugar</h3>
+            <div class="form-group">
+                <label for="studentName">Nombre Completo:</label>
+                <input type="text" id="studentName" placeholder="Ingresa tu nombre" required autofocus>
+            </div>
+
+            <button class="btn-register" id="btnRegister">✨ Comenzar Juego</button>
+            <button class="btn-ver-resultados" id="btnVerResultados">📊 Ver Resultados Globales</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar" id="progressBar" style="display: none;">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText"></div>
+
+        <!-- Quiz Container -->
+        <div id="quizContainer" style="display: none;">
+            <div class="question-container">
+                <div class="question-number" id="questionNumber">Pregunta 1</div>
+                <div class="question-text" id="questionText"></div>
+                <div class="options" id="options"></div>
+                <div class="feedback" id="feedback"></div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-next" id="btnNext">Siguiente →</button>
+            </div>
+        </div>
+
+        <!-- Results Container -->
+        <div class="results-container" id="resultsContainer">
+            <div class="achievement" id="achievement"></div>
+            <div class="score-circle">
+                <div>
+                    <div class="score-text" id="finalScore">0%</div>
+                    <div class="score-label">Puntuación</div>
+                </div>
+            </div>
+            <div class="results-title" id="resultsTitle">¡Excelente trabajo!</div>
+            <div class="results-text" id="resultsText"></div>
+            <button class="btn btn-restart" id="btnRestart">🔄 Intentar de Nuevo</button>
+            <a href="index.html" class="back-link">← Volver a la Presentación</a>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="leaderboard" id="leaderboard">
+            <h3>📊 Resultados Globales</h3>
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Estudiante</th>
+                        <th>Puntuación</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody"></tbody>
+            </table>
+            <button class="btn-register" id="btnVolverRegistro" style="margin-top: 1.5rem;">← Volver</button>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "¿En qué año fue fundada Alibaba?",
+                options: ["1995", "1999", "2003", "2000"],
+                correct: 1,
+                explanation: "Alibaba fue fundada en 1999 por Jack Ma y 17 cofundadores en Hangzhou, China."
+            },
+            {
+                question: "¿Quién es el fundador de Alibaba?",
+                options: ["Ma Huateng", "Jack Ma", "Pony Ma", "Robin Li"],
+                correct: 1,
+                explanation: "Jack Ma (Ma Yun) es el fundador de Alibaba. Se retiró como presidente ejecutivo en 2019."
+            },
+            {
+                question: "¿Cuál es el nombre de la plataforma de comercio C2C de Alibaba?",
+                options: ["Tmall", "Alipay", "Taobao", "Alibaba Cloud"],
+                correct: 2,
+                explanation: "Taobao es la plataforma de comercio Consumer-to-Consumer (C2C) de Alibaba, lanzada en 2003."
+            },
+            {
+                question: "¿En qué año tuvo lugar la mayor Oferta Pública Inicial (IPO) de la historia?",
+                options: ["2010", "2012", "2014", "2016"],
+                correct: 2,
+                explanation: "En 2014, Alibaba realizó la mayor IPO de la historia, recaudando $25 mil millones en la Bolsa de Nueva York."
+            },
+            {
+                question: "¿Cuál es el nombre de la red logística de Alibaba?",
+                options: ["Logistics Plus", "Cainiao", "Delivery Hub", "Express Network"],
+                correct: 1,
+                explanation: "Cainiao es la red logística de Alibaba, creada en 2015 para optimizar la distribución de productos."
+            },
+            {
+                question: "¿Qué servicio de pago digital es propiedad de Alibaba?",
+                options: ["WeChat Pay", "Alipay", "Apple Pay", "Google Pay"],
+                correct: 1,
+                explanation: "Alipay es el servicio de pago digital de Alibaba, formalizado en 2010 y que posteriormente evolucionó a Ant Group."
+            },
+            {
+                question: "¿Cuál es el nombre del servicio de computación en la nube de Alibaba?",
+                options: ["Alibaba Web", "Alibaba Cloud", "Cloud Hub", "Alibaba Data"],
+                correct: 1,
+                explanation: "Alibaba Cloud (Aliyun) fue fundada en 2009 y es uno de los líderes en servicios de computación en la nube."
+            },
+            {
+                question: "¿En qué se inspiró Jack Ma para elegir el nombre 'Alibaba'?",
+                options: ["Una película americana", "Un personaje histórico chino", "La historia de 'Alí Babá y los cuarenta ladrones'", "Una leyenda de Hangzhou"],
+                correct: 2,
+                explanation: "Jack Ma eligió el nombre inspirado en la famosa historia de 'Alí Babá y los cuarenta ladrones' de Las mil y una noches."
+            },
+            {
+                question: "¿Cuál es el evento anual de compra más importante de Alibaba?",
+                options: ["Black Friday", "Boxing Day", "11.11 Single's Day", "Cyber Monday"],
+                correct: 2,
+                explanation: "El 11.11 Single's Day es el evento de compra en línea más importante de Alibaba, donde se generan millares de millones en ventas."
+            },
+            {
+                question: "¿Cuántos fundadores originales participaron en la creación de Alibaba en 1999?",
+                options: ["5 fundadores", "12 fundadores", "18 fundadores", "25 fundadores"],
+                correct: 2,
+                explanation: "Alibaba fue fundada por Jack Ma y 17 cofundadores, totalizando 18 fundadores originales en 1999."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+        let selectedOption = null;
+        let studentName = '';
+        let gameStarted = false;
+
+        const registrationForm = document.getElementById('registrationForm');
+        const quizContainer = document.getElementById('quizContainer');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const progressBar = document.getElementById('progressBar');
+        const leaderboard = document.getElementById('leaderboard');
+        const questionText = document.getElementById('questionText');
+        const questionNumber = document.getElementById('questionNumber');
+        const optionsContainer = document.getElementById('options');
+        const feedback = document.getElementById('feedback');
+        const btnNext = document.getElementById('btnNext');
+        const btnRestart = document.getElementById('btnRestart');
+        const btnRegister = document.getElementById('btnRegister');
+        const btnVerResultados = document.getElementById('btnVerResultados');
+        const btnVolverRegistro = document.getElementById('btnVolverRegistro');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+
+        registrationForm.classList.add('show');
+
+        btnRegister.addEventListener('click', () => {
+            studentName = document.getElementById('studentName').value.trim();
+
+            if (!studentName) {
+                alert('Por favor ingresa tu nombre');
+                return;
+            }
+
+            gameStarted = true;
+            registrationForm.style.display = 'none';
+            progressBar.style.display = 'block';
+            quizContainer.style.display = 'block';
+            loadQuestion();
+        });
+
+        btnVerResultados.addEventListener('click', showLeaderboard);
+
+        btnVolverRegistro.addEventListener('click', () => {
+            leaderboard.classList.remove('show');
+            registrationForm.classList.add('show');
+        });
+
+        function loadQuestion() {
+            const question = quizData[currentQuestion];
+            questionNumber.textContent = `Pregunta ${currentQuestion + 1} de ${quizData.length}`;
+            questionText.textContent = question.question;
+            optionsContainer.innerHTML = '';
+            feedback.classList.remove('show', 'correct', 'incorrect');
+            feedback.textContent = '';
+            btnNext.classList.remove('show');
+            answered = false;
+            selectedOption = null;
+
+            question.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.textContent = option;
+                btn.addEventListener('click', () => selectOption(index));
+                optionsContainer.appendChild(btn);
+            });
+
+            updateProgress();
+        }
+
+        function selectOption(index) {
+            if (answered) return;
+
+            selectedOption = index;
+            answered = true;
+            const question = quizData[currentQuestion];
+            const isCorrect = index === question.correct;
+
+            const options = document.querySelectorAll('.option-btn');
+            options.forEach((btn, i) => {
+                if (i === question.correct) {
+                    btn.classList.add('correct');
+                } else if (i === selectedOption && !isCorrect) {
+                    btn.classList.add('incorrect');
+                }
+                btn.disabled = true;
+            });
+
+            feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
+            feedback.textContent = (isCorrect ? '✅ ¡Correcto! ' : '❌ Incorrecto. ') + question.explanation;
+
+            if (isCorrect) {
+                score++;
+            }
+
+            btnNext.classList.add('show');
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / quizData.length) * 100;
+            progressFill.style.width = progress + '%';
+            progressText.textContent = `Pregunta ${currentQuestion + 1} de ${quizData.length}`;
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            quizContainer.style.display = 'none';
+            progressBar.style.display = 'none';
+            resultsContainer.classList.add('show');
+
+            const percentage = Math.round((score / quizData.length) * 100);
+            const finalScore = document.getElementById('finalScore');
+            const resultsTitle = document.getElementById('resultsTitle');
+            const resultsText = document.getElementById('resultsText');
+            const achievement = document.getElementById('achievement');
+
+            finalScore.textContent = percentage + '%';
+
+            let title, text, emoji;
+            if (percentage === 100) {
+                title = '🎉 ¡FELICIDADES! 🎉';
+                text = `Fuiste el que más puso atención en nuestra presentación. 👀😂\n\nPor eso acabas de ganar +1.000 puntos de inteligencia 🧠✨\n\nNo hay chocolatina, no hay plata y tampoco premio físico… 😭🍫\n\nPero tranquilo, el conocimiento vale más que mil chocolatinas. ¡Felicidades, ahora eres oficialmente el más inteligente del salón! 🧠🏆😂`;
+                emoji = '🥇';
+            } else if (percentage >= 80) {
+                title = '🌟 ¡Muy Bien!';
+                text = `¡Impresionante ${studentName}! Has acertado ${score} de ${quizData.length} preguntas. Demuestra un excelente conocimiento sobre Alibaba. ¡Sigue así!`;
+                emoji = '⭐';
+            } else if (percentage >= 60) {
+                title = '👍 ¡Buen Trabajo!';
+                text = `¡Bien ${studentName}! Has acertado ${score} de ${quizData.length} preguntas. Tienes un buen conocimiento sobre Alibaba. Repasa algunos temas para mejorar aún más.`;
+                emoji = '📚';
+            } else if (percentage >= 40) {
+                title = '💪 Necesitas Practicar';
+                text = `${studentName}, has acertado ${score} de ${quizData.length} preguntas. Te recomendamos revisar la presentación para aprender más sobre Alibaba.`;
+                emoji = '🎯';
+            } else {
+                title = '📖 Vuelve a Intentar';
+                text = `${studentName}, has acertado ${score} de ${quizData.length} preguntas. Te recomendamos revisar la presentación completa y volver a intentar.`;
+                emoji = '🚀';
+            }
+
+            resultsTitle.textContent = title;
+            resultsText.textContent = text;
+            achievement.textContent = emoji;
+
+            saveResult(studentName, percentage);
+        }
+
+        function saveResult(name, percentage) {
+            const results = JSON.parse(localStorage.getItem('alibabaResults')) || [];
+            results.push({
+                name: name,
+                percentage: percentage,
+                fecha: new Date().toLocaleString('es-ES')
+            });
+            localStorage.setItem('alibabaResults', JSON.stringify(results));
+        }
+
+        function showLeaderboard() {
+            registrationForm.classList.remove('show');
+            leaderboard.classList.add('show');
+
+            const results = JSON.parse(localStorage.getItem('alibabaResults')) || [];
+            const sorted = results.sort((a, b) => b.percentage - a.percentage);
+
+            const leaderboardBody = document.getElementById('leaderboardBody');
+            leaderboardBody.innerHTML = '';
+
+            sorted.forEach((result, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><strong>${index + 1}</strong></td>
+                    <td>${result.name}</td>
+                    <td><strong>${result.percentage}%</strong></td>
+                    <td>${result.fecha}</td>
+                `;
+                leaderboardBody.appendChild(row);
+            });
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            selectedOption = null;
+            gameStarted = false;
+            quizContainer.style.display = 'none';
+            progressBar.style.display = 'none';
+            resultsContainer.classList.remove('show');
+            registrationForm.classList.add('show');
+            document.getElementById('studentName').value = '';
+            document.getElementById('studentName').focus();
+        }
+
+        btnNext.addEventListener('click', nextQuestion);
+        btnRestart.addEventListener('click', restartQuiz);
+    </script>
+</body>
+</html>
